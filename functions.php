@@ -113,6 +113,52 @@ function jobview_widgets_init() {
 }
 add_action( 'widgets_init', 'jobview_widgets_init' );
 
+
+
+function jobview_custom_post_type() {
+	$labels = array(
+	 			'name'          => _x( 'Tips & tricks', 'post type general name' ),
+        'singular_name'      => _x( 'Tips & Tricks', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'Tip' ),
+        'add_new_item'       => __( 'Add New Tip' ),
+        'edit_item'          => __( 'Edit Tip' ),
+        'new_item'           => __( 'New Tip' ),
+        'all_items'          => __( 'All Tips & Tricks' ),
+        'view_item'          => __( 'View Tips' ),
+        'search_items'       => __( 'Search Tips' ),
+        'not_found'          => __( 'No Tips found' ),
+        'not_found_in_trash' => __( 'No Tips found in the Trash' ),
+        'parent_item_colon'  => '',
+
+        'menu_name'          => 'Tips & Tricks'
+    );
+    $args = array(
+        'labels'        => $labels,
+        'description'   => 'Tips & Tricks',
+        'public'        => true,
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_in_nav_menus' => true,
+    		'menu_icon'					 => 'dashicons-lightbulb',
+        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+        'has_archive'   => true,
+
+        //'taxonomies' => array('category'),
+    );
+    register_post_type( 'tips-tricks', $args );
+
+}
+add_action( 'init', 'jobview_custom_post_type' );
+
+
+
+/** add categories for custom post type */
+add_action( 'init', 'build_taxonomies', 0 );
+function build_taxonomies() {
+    register_taxonomy( 'mycategories', 'tips-tricks', array( 'hierarchical' => true, 'label' => 'Tips & Tricks Categories', 'query_var' => true, 'rewrite' => true ) );
+}
+
+
 /**
  * Enqueue scripts and styles.
  */
