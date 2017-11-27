@@ -13,10 +13,15 @@
 if ( have_posts() ) {
 	while ( have_posts() ) {
 		the_post();
+
+
+
 		//
+    $terms = get_terms([
+        'taxonomy' => $taxonomy,
+        'hide_empty' => false,
+    ]);
 
-
-	the_terms( $post->ID, 'tips&tricks', );
 		//
 	} // end while
 } // end if

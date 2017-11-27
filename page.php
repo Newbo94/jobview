@@ -18,13 +18,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 
-			<div class="container">
-				<div class="row">
-					<div class="col-lg-10">
-						fsdfds
-					</div>
-				</div>
-			</div>
+		
 			<?php
 			while ( have_posts() ) : the_post();
 
