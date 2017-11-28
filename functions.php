@@ -47,6 +47,7 @@ if ( ! function_exists( 'jobview_setup' ) ) :
 			'menu-1' => esc_html__( 'Primary', 'jobview' ),
 		) );
 
+
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
@@ -158,12 +159,23 @@ function build_taxonomies() {
     register_taxonomy( 'mycategories', 'tips-tricks', array( 'hierarchical' => true, 'label' => 'Tips & Tricks Categories', 'query_var' => true, 'rewrite' => true ) );
 }
 
+/* Add bootstrap support to the Wordpress theme*/
+
+function theme_add_bootstrap() {
+wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
+wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
+wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.0.0', true );
+}
+
+add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 
 /**
  * Enqueue scripts and styles.
  */
 function jobview_scripts() {
 	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() . '/css/header.css', array() );
+
 
 	wp_enqueue_script( 'jobview-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 
@@ -175,15 +187,7 @@ function jobview_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'jobview_scripts' );
 
-/* Add bootstrap support to the Wordpress theme*/
 
-function theme_add_bootstrap() {
-wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
-wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
-wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.0.0', true );
-}
-
-add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
 
 
 
@@ -192,6 +196,7 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
+
 
 /**
  * Custom template tags for this theme.
@@ -215,9 +220,4 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-// Register Custom Navigation Walker
-require_once get_template_directory() . '/layouts/wp-bootstrap-navwalker.php';
-
-register_nav_menus( array(
-    'primary' => __( 'Primary Menu', 'jobview' ),
-) );
+require_once get_template_directory() . '/wp-bootstrap-navwalker.php';

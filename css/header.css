@@ -1,0 +1,29 @@
+.navbar-nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: column;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+    border-top: 1px solid #0F4155;
+}
+
+.navbar-nav > li {
+    float: left;
+    padding: 15px;
+}
+
+.nav {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style: none;
+}
+
+.navbar-nav > li{
+  padding: 5px 15px 5px 15px;
+}
