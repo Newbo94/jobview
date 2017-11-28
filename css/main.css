@@ -17,7 +17,36 @@ font-family: 'Source Sans Pro', sans-serif;
 
 
 
+.top-offset-15px {
+  margin-top: 15px;
+}
+
+.top-offset-30 {
+  margin-top: 30px
+}
+
+.top-offset-40 {
+  margin-top: 40px
+}
+
+.top-offset-50 {
+
+  margin-top: 50px;
+
+}
+
+
+
 /* Buttons */
+
+.jw-btn-primary {
+  padding: .6em 1em .4em;
+  border-radius: 200px;
+  line-height: 1.5;
+  border-color: #288791;
+  background: #288791;
+  width: 150px;
+}
 
 
 /* Input main style */
