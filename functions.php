@@ -174,6 +174,8 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
  */
 function jobview_scripts() {
 	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() );
+	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() . '/css/header.css', array() );
 
 
