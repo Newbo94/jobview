@@ -10,7 +10,7 @@
 ?>
 
 
-<article  class="col-lg-4 " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article  class="col-lg-4 top-offset-30 " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
   <div class="article-card" id="article-card">
     <header class="entry-header">
@@ -27,8 +27,6 @@
           echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
           . '/images/thumbnail-default.jpg" />';
         }
-
-
 
         ?>
       </div>

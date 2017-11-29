@@ -89,17 +89,11 @@ justify-content: center;
 		if ( have_posts() ) : ?>
 
 			<header class="page-header">
-				<span></span>
+				<span class="overline"></span>
 				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
-
-
+					the_archive_title( '<h1 class="page-title">', '</h1>' )
 
 				?>
-
-
-
-
 
 <!-- Henter Custom taxonomy tips-tricks-cat som links -->
 
@@ -130,7 +124,15 @@ justify-content: center;
 
 				?>
 
-
+        <div class="row">
+        	<?php
+        	if ( function_exists('yoast_breadcrumb') ) {
+        	yoast_breadcrumb('
+        	<p id="breadcrumbs">','</p>
+        	');
+        	}
+        	?>
+        </div>
 
 
 
@@ -140,15 +142,7 @@ justify-content: center;
 			</header><!-- .page-header -->
 
 
-<div class="row">
-	<?php
-	if ( function_exists('yoast_breadcrumb') ) {
-	yoast_breadcrumb('
-	<p id="breadcrumbs">','</p>
-	');
-	}
-	?>
-</div>
+
 
 			<div class="row">
 

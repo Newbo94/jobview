@@ -262,16 +262,9 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
 
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
-
-function special_nav_class ($classes, $item) {
-    if (in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
-        $classes[] = 'active ';
-    }
-    return $classes;
-}
+// Register Custom Navigation Walker
+require_once('class-wp-bootstrap-navwalker.php');
 
 
 
