@@ -12,6 +12,19 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+<aside id="secondary" class="widget-area col-lg-4">
+
+		<div class="">
+
+			<?php
+if ( is_singular() ) {
+
+
+
+	 dynamic_sidebar( 'sidebar-1' ); }
+	 
+?>
+
+</div> <!-- col-lg-4 -->
+</div> <!-- row -->
 </aside><!-- #secondary -->

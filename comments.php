@@ -70,3 +70,4 @@ if ( post_password_required() ) {
 	?>
 
 </div><!-- #comments -->
+<?php
