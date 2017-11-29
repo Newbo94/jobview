@@ -162,9 +162,10 @@ function build_taxonomies() {
 /* Add bootstrap support to the Wordpress theme*/
 
 function theme_add_bootstrap() {
+wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array('Jquery'), '4.0.0', true);
 wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
-wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.min.js', array(), '4.0.0', true );
+
 }
 
 add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
@@ -176,7 +177,7 @@ function jobview_scripts() {
 	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() );
 	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
-	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() . '/css/header.css', array() );
+	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
 
 
 	wp_enqueue_script( 'jobview-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
@@ -223,3 +224,12 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 require_once get_template_directory() . '/wp-bootstrap-navwalker.php';
+
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class ($classes, $item) {
+    if (in_array('current-page-ancestor', $classes) || in_array('current-menu-item', $classes) ){
+        $classes[] = 'active ';
+    }
+    return $classes;
+}
