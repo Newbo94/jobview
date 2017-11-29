@@ -137,11 +137,12 @@ function jobview_custom_post_type() {
         'labels'        => $labels,
         'description'   => 'Tips & Tricks',
         'public'        => true,
+				'publicly_queryable' => true,
         'hierarchical'      => true,
         'show_ui'           => true,
         'show_in_nav_menus' => true,
     		'menu_icon'					 => 'dashicons-lightbulb',
-        'supports'      => array( 'title', 'editor', 'thumbnail', 'excerpt', 'comments' ),
+        'supports'      => array( 'title', 'editor',  'author', 'thumbnail', 'excerpt', 'comments' ),
         'has_archive'   => true,
 
         //'taxonomies' => array('category'),
@@ -153,10 +154,49 @@ add_action( 'init', 'jobview_custom_post_type' );
 
 
 
-/** add categories for custom post type */
-add_action( 'init', 'build_taxonomies', 0 );
-function build_taxonomies() {
-    register_taxonomy( 'mycategories', 'tips-tricks', array( 'hierarchical' => true, 'label' => 'Tips & Tricks Categories', 'query_var' => true, 'rewrite' => true ) );
+
+
+
+add_action( 'init', 'register_taxonomy_sectors' );
+
+function register_taxonomy_sectors() {
+
+    $labels = array(
+        'name' => _x( 'Tips & Tricks ', 'Tips & Tricks ' ),
+        'singular_name' => _x( 'Tips & Tricks ', 'Tips & Tricks ' ),
+        'search_items' => _x( 'Search Tips & Tricks ', 'Tips & Tricks ' ),
+        'popular_items' => _x( 'Popular Tips & Tricks ', 'Tips & Tricks ' ),
+        'all_items' => _x( 'All Tips & Tricks ', 'Tips & Tricks' ),
+        'parent_item' => _x( 'Parent Tips & Tricks Category', 'Tips & Tricks ' ),
+        'parent_item_colon' => _x( 'Parent Tips & Tricks Category:', 'Tips & Tricks ' ),
+        'edit_item' => _x( 'Edit Tips & Tricks ', 'Tips & Tricks ' ),
+        'update_item' => _x( 'Update Tips & Tricks ', 'Tips & Tricks ' ),
+        'add_new_item' => _x( 'Add New Tips & Tricks ', 'Tips & Tricks ' ),
+        'new_item_name' => _x( 'New Tips & Tricks Name', 'Tips & Tricks ' ),
+        'separate_items_with_commas' => _x( 'Separate Tips & Tricks Category with commas', 'sector' ),
+        'add_or_remove_items' => _x( 'Add or remove Tips & Tricks Category', 'Tips & Tricks Category' ),
+        'choose_from_most_used' => _x( 'Choose from the most used Tips & Tricks Category', 'Tips & Tricks Category' ),
+        'menu_name' => _x( 'Tips & Tricks Category', 'Tips & Tricks Category' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+				'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_tagcloud' => false,
+        'hierarchical' => true,
+
+        'rewrite' => array(
+            'slug' => 'tips-tricks-kategori',
+            'with_front' => false,
+            'hierarchical' => true
+        ),
+        'query_var' => true
+    );
+
+    register_taxonomy( 'tips-tricks-cat', array('tips-tricks'), $args );
 }
 
 /* Add bootstrap support to the Wordpress theme*/
@@ -178,10 +218,9 @@ function jobview_scripts() {
 	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
-
-
+	wp_enqueue_style('Singel tips css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
 	wp_enqueue_script( 'jobview-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
-
+	wp_enqueue_script( 'jobview-post', get_template_directory_uri() . '/js/post.js', array('jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'jobview-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -233,3 +272,21 @@ function special_nav_class ($classes, $item) {
     }
     return $classes;
 }
+
+
+
+/* Exercpt */
+
+function my_excerpt_length($length) {
+return 25;
+}
+add_filter('excerpt_length', 'my_excerpt_length');
+
+
+
+
+function new_excerpt_more($more) {
+       global $post;
+	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Læs opslag</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
