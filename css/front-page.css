@@ -1,0 +1,12 @@
+
+
+#panel, #markerlist {
+  display: none;
+
+}
+
+.gm-style div div div div div div div div {
+height: 100% !important;
+
+right: 0 !important;
+}
