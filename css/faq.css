@@ -1,0 +1,18 @@
+
+
+.thumbnail {
+    position: relative;
+}
+
+.caption {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+
+.wp-post-image{
+  border-radius: 50%;
+width: 250px;
+height: 250px;
+}
