@@ -150,6 +150,41 @@ function jobview_custom_post_type() {
     register_post_type( 'tips-tricks', $args );
 
 }
+
+/*CPT*/
+$labels = array(
+      'name'          => _x( 'FAQ', 'post type general name' ),
+      'singular_name'      => _x( 'FAQ', 'post type singular name' ),
+      'add_new'            => _x( 'Add New', 'Question' ),
+      'add_new_item'       => __( 'Add New Question' ),
+      'edit_item'          => __( 'Edit Question' ),
+      'new_item'           => __( 'New Question' ),
+      'all_items'          => __( 'All Questions' ),
+      'view_item'          => __( 'View Questions' ),
+      'search_items'       => __( 'Search Questions' ),
+      'not_found'          => __( 'No Questions found' ),
+      'not_found_in_trash' => __( 'No Questions found in the Trash' ),
+      'parent_item_colon'  => '',
+
+      'menu_name'          => 'FAQ'
+  );
+  $args = array(
+      'labels'        => $labels,
+      'description'   => 'FAQ',
+      'public'        => true,
+      'hierarchical'      => true,
+      'show_ui'           => true,
+      'show_in_nav_menus' => true,
+      'menu_icon'					 => 'dashicons-editor-help',
+      'supports'      => array( 'title', 'editor', 'thumbnail' ),
+      'has_archive'   => true,
+
+      //'taxonomies' => array('category'),
+  );
+  register_post_type( 'FAQ', $args );
+
+
+
 add_action( 'init', 'jobview_custom_post_type' );
 
 
@@ -218,6 +253,7 @@ function jobview_scripts() {
 	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
+	  wp_enqueue_style( 'faq-css', get_template_directory_uri() . '/css/faq.css' );
 	wp_enqueue_style('Front page css', get_template_directory_uri() . '/css/front-page.css' );
 	wp_enqueue_style('Singel tips css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
   wp_enqueue_style('Contact-css', get_template_directory_uri() . '/css/contact.css' );

@@ -8,13 +8,7 @@
 
 <?php get_header(); ?>
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <ul><?php echo get_the_term_list( $post->ID, 'mycategories', '<li class="jobs_item">', ', ', '</li>' ) ?></ul>
-    </div>
-  </div>
-</div>
+
 
 
 <div class="container-fluid news-bg">
