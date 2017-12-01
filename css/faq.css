@@ -1,5 +1,8 @@
 
 
+
+
+
 .thumbnail {
     position: relative;
 }
@@ -11,8 +14,26 @@
     width: 100%;
 }
 
-.wp-post-image{
+.feature-single .thumbnail img {
   border-radius: 50%;
 width: 250px;
 height: 250px;
+}
+
+.heading {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.news-bg span {
+  width: 120px;
+    background: #FCB123;
+    height: 5px;
+    display: block;
+    margin-bottom: 10px;
 }

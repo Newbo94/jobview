@@ -20,6 +20,22 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<style>
+
+
+#content {
+
+background-image: url("<?php echo get_template_directory_uri(); ?>/image/bg-element.png");
+background-position: center;
+background-size: cover;
+background-repeat: repeat-y;
+background-position: initial;
+
+}
+
+</style>
+
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jobview' ); ?></a>
 
