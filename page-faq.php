@@ -9,7 +9,7 @@
 <?php get_header(); ?>
 
 
-<div class="container news-bg" id="faq-con">
+<div class="container news-bg top-offset-50" id="faq-con">
   <div class="row">
 
     <div class="heading">
@@ -26,23 +26,25 @@
 
 
 
-        <div class="col-md-3 feature-single" data-feature="1" >
+        <div class="col-xl-3 col-lg-4 col-md-6 feature-single top-offset-30" >
           <div class="thumbnail text-center">
             <?php the_post_thumbnail( 'medium' ); ?>
-            <h4 class="panel-title caption">
+            <div class="panel-title caption">
+                <h4>
               <?php the_title(); ?>
-            </h4>
+              </h4>
+            </div>
           </div>
-        </div><!--col-md-4-->
 
-
-
-        <div class="feature-single-info bg-softblue" id="205" style="display: block;">
+        <div class="feature-single-info bg-softblue top-offset-30" >
           <div class="feature-heading">
-            <h5> Answer</h5>
+            <span></span>
+            <h5> <?php the_field('q-heading') ?></h5>
             <p class="entry-content">  <?php the_content(); ?></p>
           </div>
         </div>
+      </div><!--col-md-4-->
+
 
         <?php wp_reset_postdata(); ?>
       <?php endwhile; ?>
@@ -50,21 +52,33 @@
 
   </div>
 </div>
-</div class="row">
+</div>
 
 <script type="text/javascript">
 
 jQuery(document).ready(function( $ ) {
 
-  $(".feature-single-info ").hide();
-  $(".feature-single" ).click(function () {
-    $(this).next(".feature-single-info ").slideToggle(500);
-    $(this).toggleClass("expanded");
-  });
+  $(".feature-single").toggle(
+    function () {
+      $(this).addClass("hovered");
+    },
+    function () {
+      $(this).removeClass("hovered");
+    }
+  );
+
+
+
 
 
 });
+
+
+
 </script>
+
+
+
 
 
 <?php get_footer(); ?>
