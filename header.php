@@ -32,6 +32,8 @@ background-size: cover;
 background-repeat: repeat-y;
 background-position: initial;
 
+
+
 }
 
 </style>

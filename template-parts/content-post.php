@@ -11,13 +11,10 @@
 
 
 <article  class="col-lg-4 top-offset-30 " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-
   <div class="article-card" id="article-card">
     <header class="entry-header">
       <div class="header-img">
         <?php
-
-
         // Must be inside a loop.
 
         if ( has_post_thumbnail() ) {
@@ -27,10 +24,8 @@
           echo '<img src="' . get_bloginfo( 'stylesheet_directory' )
           . '/images/thumbnail-default.jpg" />';
         }
-
-
         ?>
-      </div>
+      </div> <!-- header-img -->
       <div class="ps-absoult meta-data">
         <div class="meta-data-text">
           <div class="author-meta">
@@ -48,7 +43,6 @@
             <div class="bg-overlay">
           <p>	<?php the_time('j/m/y') ?></p>
         </div> <!-- bg-overlay -->
-
         </header><!-- .entry-header -->
 
         <div class="entry-content">
@@ -62,8 +56,8 @@
 
 
             if ( 'post' === get_post_type() ) : ?>
-          </div> <!-- meta data text -->
-        </div>
+
+
 
 
         <?php
@@ -71,8 +65,10 @@
       <?php
       the_excerpt()
       ?>
-    </div><!-- .entry-content -->
-  </div>
+          </div> <!-- entry-content -->
+        </div> <!-- meta-data-text -->
+
+
 
 
 </article><!-- #post-<?php the_ID(); ?> -->
