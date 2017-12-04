@@ -1,0 +1,96 @@
+/** Mission, vision & værdier sektion **/
+.mvv-section .blur {
+    background-color: #0f4155;
+    overflow: hidden;
+    filter: blur(50px);
+    position: absolute;
+    height: 400px;
+    top: -50px;
+    left: -50px;
+    right: -50px;
+    bottom: -50px;
+    opacity: 0.46;
+}
+
+.mvv-section .widget {
+    border-top: 2px solid rgba(255, 255, 255, .5);
+    border-bottom: 2px solid rgba(255, 255, 255, .5);
+    height: 300px;
+    width: 300px;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.mvv-section .center {
+    position: absolute;
+}
+
+.mvv-section .text {
+    margin: 40px;
+}
+
+.mvv-section .text h3, .text p {
+    color: white;
+    text-align: center;
+}
+
+.mvv-section .text h3 {
+    font-weight: bold;
+    font-size: 30px;
+    margin-bottom: 24px;
+}
+
+.mvv-section .text p {
+    margin-bottom: 0;
+}
+
+
+
+
+/** Om Jobview sektion **/
+.about-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+
+.about-section img {
+    object-fit: cover;
+    height: 500px;
+    width: 500px;
+    border-radius: 50%;
+}
+
+
+/** Jobs hos Jobview sektion **/
+
+
+
+/** Presseoplæg sektion **/
+
+
+/** RESPONSIVE **/
+
+
+@media only screen and (max-width : 1199px) {
+    .about-section img {
+        height: 400px;
+        width: 400px;
+    }
+}
+
+@media only screen and (max-width : 991px) {
+    .about-section img {
+        margin: auto;
+    }
+    
+    .about-section-txt {
+        margin-top: 30px;
+    }
+}
+
+@media only screen and (max-width : 575px) {
+    .about-section img {
+        height: 300px;
+        width: 300px;
+    }
+}
