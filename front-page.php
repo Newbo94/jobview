@@ -36,29 +36,24 @@ get_header(); ?>
 
       }
 
-      .jw-fp-maptext{
-        position: relative;
-        top: 50%;
-        left: 50%;
-        font-size: 50px;
-        color: white;
-        transform: translate(-50%,-50%);
-        -ms-transform: translate(-50%,-50%);
+      #jw-fp-maptext{
 
-          margin-top: 350px;
-          }
+
+        margin-top: 250px;
+        position: absolute;
+        z-index: 10;
+      }
 
       #overlay {
-
-        width: 100%; /* Full width (cover the whole page) */
-
+        position: relative;
+        width: 100%;
         top: 0;
         left: 0;
         right: 0;
         bottom: 0;
-        background-color: rgba(40,135,145,0.6); /* Black background with opacity */
-        z-index: 5; /* Specify a stack order in case you're using a different order for other elements */
-        cursor: pointer; /* Add a pointer on hover */
+        background-color: rgba(40,135,145,0.6);
+        z-index: 5;
+
       }
 
       #jw-fp-maptext h1, p{
@@ -89,17 +84,18 @@ get_header(); ?>
  </head>
 <!--   MAP SECTION  -->
 <section id="" class="jw-fp-map container-fluid">
-     <div id="overlay">
+
        <div class="row" style="margin-left:0; margin-right:0;">
          <div id="map">
          </div>
-           <div id="jw-fp-maptext" class="col-lg-12 text-center">
-             <h1>Tryk på kortet eller brug søgefeltet</h1>
-             <p>Søg mellem mere end <span>12.535</span> jobs i hele Danmark</p>
-             <form>
-           <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
-         </form> <span class="jw-search-icon"></span>
+          <div id="overlay">
        </div>
+       <div id="jw-fp-maptext" class="col-lg-12 text-center">
+         <h1>Tryk på kortet eller brug søgefeltet</h1>
+         <p>Søg mellem mere end <span>12.535</span> jobs i hele Danmark</p>
+         <form>
+       <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
+     </form> <span class="jw-search-icon"></span>
      </div>
      <!--  row end -->
    </div>
@@ -148,8 +144,9 @@ document.getElementById('jw-fp-maptext').style.height = offsetHeight+'px';
 
 </script>
 <script>
-$("#overlay").on.click(function(){
-    $("#overlay").hide();
+
+jQuery('#overlay').on('click', function(){
+document.getElementById("overlay").style.display = "none";
 });
 </script>
 <?php get_footer(); ?>

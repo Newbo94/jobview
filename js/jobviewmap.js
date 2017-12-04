@@ -37,14 +37,12 @@ infoWindow = new google.maps.InfoWindow;
       }
 
       var icon = "http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=";
-      var json = require('../data/data.json');
-      consol.log(json);
-
       var infowindow = new google.maps.InfoWindow();
 
 //LOADING JSON FILE START//
 
-    $.getJSON("../data/data.json", function(jobs) {
+    $.getJSON("http://localhost:8888/wordpress/wp-content/themes/jobview/data/test-job-post.json", function(jobs) {
+    console.log(data);
     $.each(data.jobpost, function (key, data) {
 
         var location = new google.maps.LatLng(data.latitude, data.longitude);
