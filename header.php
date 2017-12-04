@@ -20,17 +20,37 @@
 </head>
 
 <body <?php body_class(); ?>>
+
+<style>
+
+
+#content {
+
+background-image: url("<?php echo get_template_directory_uri(); ?>/image/bg-element.png");
+background-position: center;
+background-size: cover;
+background-repeat: repeat-y;
+background-position: initial;
+
+}
+
+</style>
+
 	<div id="page" class="site">
 		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'jobview' ); ?></a>
 
 		<header id="masthead" class="site-header">
 			<nav class="navbar  navbar-toggleable-md navbar-light bg-faded" role="navigation">
-				<button id="navbar-toggler" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
-		<span class="navbar-toggler-icon"></span>
-	</button>
+
 				<div class="container" id="bs-menu">
 					<!-- Brand and toggle get grouped for better mobile display -->
 					<div class="logo-con">
+						<button id="navbar-toggler" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-controls="bs-example-navbar-collapse-1" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="hamburger-icon"></span>
+			<span class="hamburger-icon"></span>
+			<span class="hamburger-icon"></span>
+
+			</button>
 					<a class="navbar-brand" href="#"><?php the_custom_logo( $blog_id = 0 ) ?></a>
 					</div>
 					<?php
@@ -46,7 +66,7 @@
 					);
 					?>
 
-				<div class="" style="text-align: right;">
+				<div class="user-btn" style="text-align: left;">
 					<button id="login" class="btn-type1">LOGIN</button>
 					<button id="register-user" class="btn-type2">OPRET BRUGER</button>
 				</div>

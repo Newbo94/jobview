@@ -13,4 +13,15 @@ $.each(row, function() {
         $(this).height(maxh);
     });
 });
+
+
+$("#navbar-toggler").click(function(){
+      $(" #bs-menu .navbar-collapse, .user-btn").toggle(500);
+  });
+
+
+
+
+
+
 });
