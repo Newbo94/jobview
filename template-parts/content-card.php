@@ -64,10 +64,7 @@
           </div> <!-- meta data text -->
         </div>
 
-        <div class="entry-meta">
-          <?php jobview_posted_on(); ?>
-
-        </div><!-- .entry-meta -->
+    
         <?php
       endif; ?>
       <?php

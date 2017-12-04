@@ -67,8 +67,8 @@ background-position: initial;
 					?>
 
 				<div class="user-btn" style="text-align: left;">
-					<button id="login" class="btn-type1">LOGIN</button>
-					<button id="register-user" class="btn-type2">OPRET BRUGER</button>
+					<button id="login" class="btn-type1" onclick="window.location.href='http://localhost:8888/jobview/wordpress/login/ '" onclick="window.location.href='http://localhost:8888/jobview/wordpress/register/'">LOGIN</button>
+					<button id="register-user" class="btn-type2"  onclick="window.location.href='http://localhost:8888/jobview/wordpress/register/'">OPRET BRUGER</button>
 				</div>
 				</div>
 			</nav>
