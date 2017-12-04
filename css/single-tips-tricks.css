@@ -196,6 +196,25 @@ margin-bottom: 10px;
 }
 
 
+.blog .cat-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+      margin-left: 15px;
+}
+
+.blog .cat-link a {
+  color: #0F4155;
+  font-weight: 700;
+}
+
+.blog .cat-link a:hover {
+  text-decoration: none;
+  opacity: 0.5;
+}
+
+
+
 #breadcrumbs {
   padding-left: 15px;
 }
