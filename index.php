@@ -33,7 +33,8 @@ get_header(); ?>
 					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 				</header>
 
-
+<?php endif; ?>
+<?php endif; ?>
 
 
 				<?php if ( have_posts() ) : ?>
