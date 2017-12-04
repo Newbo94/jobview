@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="co" class="content-area container">
+	<div id="co" class="content-area container top-offset-50">
 		<main id="main" class="site-main row">
       <div class="col-lg-8">
         <?php

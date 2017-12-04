@@ -253,7 +253,8 @@ function jobview_scripts() {
 	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
-	  wp_enqueue_style( 'faq-css', get_template_directory_uri() . '/css/faq.css' );
+ 	wp_enqueue_style( 'faq-css', get_template_directory_uri() . '/css/faq.css' );
+	wp_enqueue_style( 'job-css', get_template_directory_uri() . '/css/job.css' );
 	wp_enqueue_style('Front page css', get_template_directory_uri() . '/css/front-page.css' );
 	wp_enqueue_style('Singel tips css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
   wp_enqueue_style('Contact-css', get_template_directory_uri() . '/css/contact.css' );
@@ -321,3 +322,46 @@ function new_excerpt_more($more) {
 	return '<a class="moretag" href="'. get_permalink($post->ID) . '"> Læs opslag</a>';
 }
 add_filter('excerpt_more', 'new_excerpt_more');
+
+
+
+
+/**
+* Kilde https://wordpress.stackexchange.com/questions/250243/customize-comment-form
+ * Customize comment form default fields.
+ * Move the comment_field below the author, email, and url fields.
+ */
+function wpse250243_comment_form_default_fields( $fields ) {
+    $commenter     = wp_get_current_commenter();
+    $user          = wp_get_current_user();
+    $user_identity = $user->exists() ? $user->display_name : '';
+    $req           = get_option( 'require_name_email' );
+    $aria_req      = ( $req ? " aria-required='true'" : '' );
+
+    $fields = [
+        'author' => '<div class="top-input">
+
+				<p class="comment-form-author">' . '<label for="author">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required"></span>' : '' ) . '</label> ' .
+                    '<input id="author" placeholder="Navn*" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></p>',
+        'email'  => '<p class="comment-form-email"><label for="email">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required"></span>' : '' ) . '</label> ' .
+                    '<input id="email" placeholder="E-mail*" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></p></div>',
+        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( '', 'noun', 'textdomain' ) . '</label> <textarea id="comment" placeholder="Din besked*"name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>',
+    ];
+
+    return $fields;
+}
+add_filter( 'comment_form_default_fields', 'wpse250243_comment_form_default_fields' );
+
+/**
+ * Remove the original comment field because we've added it to the default fields
+ * using wpse250243_comment_form_default_fields(). If we don't do this, the comment
+ * field will appear twice.
+ */
+function wpse250243_comment_form_defaults( $defaults ) {
+    if ( isset( $defaults[ 'comment_field' ] ) ) {
+        $defaults[ 'comment_field' ] = '';
+    }
+
+    return $defaults;
+}
+add_filter( 'comment_form_defaults', 'wpse250243_comment_form_defaults', 10, 1 );

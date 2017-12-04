@@ -1,0 +1,25 @@
+
+{"24008":{"locale":"da_DK",
+  "locations":
+  [{"road":"N\u00f8rregade 71",
+    "city":"Odense C",
+    "zip":"5000",
+    "latitude":55.400399999999998,
+    "longitude":10.389200000000001}],
+
+    "applybefore":"snarest muligt",
+    "title":"Burger master",
+}
+
+, "24009": {
+  "locale": "da_DK",
+  "locations": [{
+    "road": "N\u00f8rregade 71",
+    "city": "Odense C",
+    "zip": "5000",
+    "latitude": 55.400399999999998,
+    "longitude": 10.389200000000001
+  }],
+  "applybefore": "snarest muligt",
+  "title": "Burger master - kopi",
+}

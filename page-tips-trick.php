@@ -37,25 +37,37 @@ justify-content: center;
       <?php
       				$terms = get_terms( 'tips-tricks-cat' );
 
-      				echo '<div class="cat-link">
 
-      				<h3>';
+              echo '<div class="cat-link">
 
-      				foreach ( $terms as $term ) {
+              <h3>';
 
-      				    // The $term is an object, so we don't need to specify the $taxonomy.
-      				    $term_link = get_term_link( $term );
+              foreach ( $terms as $term ) {
 
-      				    // If there was an error, continue to the next term.
-      				    if ( is_wp_error( $term_link ) ) {
-      				        continue;
-      				    }
+                  // The $term is an object, so we don't need to specify the $taxonomy.
+                  $term_link = get_term_link( $term );
 
-      				    // We successfully got a link. Print it out.
-      				    echo '<a href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
-      				}
+                  // If there was an error, continue to the next term.
+                  if ( is_wp_error( $term_link ) ) {
+                      continue;
+                  }
 
-      				echo '</h3></div>'; ?>
+                  // We successfully got a link. Print it out.
+                  echo '<a href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
+              }
+
+              echo '</h3></div>';
+
+
+
+
+
+
+
+
+
+      				?>
+
 
 
     </div>
@@ -71,6 +83,7 @@ justify-content: center;
 
           <div class="top-offset-50">
           <?php the_content(); ?>
+
           </div>
       	<!-- do stuff ... -->
       	<?php endwhile; ?>

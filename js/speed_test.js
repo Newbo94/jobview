@@ -77,8 +77,8 @@ Jobview.showMarkers = function() {
     panel.appendChild(item);
 
 
-    var latLng = new google.maps.LatLng(Jobview.pics[i].latitude,
-        Jobview.pics[i].longitude);
+    var latLng = new google.maps.LatLng(Jobview.latitude,
+        Jobview.longitude);
 
     var imageUrl = 'http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=' +
         'FFFFFF,008CFF,000000&ext=.png';

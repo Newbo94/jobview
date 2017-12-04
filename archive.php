@@ -81,6 +81,8 @@ justify-content: center;
 
 
 
+<!-- Post Section -->
+
 
 	<div id="primary" class="content-area container top-offset-50">
 		<main id="main" class="site-main row">
@@ -134,11 +136,6 @@ justify-content: center;
         	?>
         </div>
 
-
-
-
-
-
 			</header><!-- .page-header -->
 
 
@@ -149,6 +146,8 @@ justify-content: center;
 
 
 			<?php
+
+
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
@@ -173,7 +172,7 @@ if(is_archive())
 		else :
 
 			get_template_part( 'template-parts/content', 'none' );?>
-</div>
+</div> <!-- row -->
 <?php 	endif; ?>
 </div>
 		</main><!-- #main -->
