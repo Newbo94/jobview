@@ -254,7 +254,7 @@ function jobview_scripts() {
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
  	wp_enqueue_style( 'faq-css', get_template_directory_uri() . '/css/faq.css' );
-	wp_enqueue_style( 'job-css', get_template_directory_uri() . '/css/job.css' );
+	wp_enqueue_style( 'job-css', get_template_directory_uri() . '/css/jobs.css' );
 	wp_enqueue_style('Front page css', get_template_directory_uri() . '/css/front-page.css' );
 	wp_enqueue_style('Singel tips css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
   wp_enqueue_style('Contact-css', get_template_directory_uri() . '/css/contact.css' );

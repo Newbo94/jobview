@@ -42,16 +42,16 @@ infoWindow = new google.maps.InfoWindow;
 //LOADING JSON FILE START//
 
     $.getJSON("http://localhost:8888/wordpress/wp-content/themes/jobview/data/test-job-post.json", function(jobs) {
-    console.log(data);
-    $.each(data.jobpost, function (key, data) {
 
-        var location = new google.maps.LatLng(data.latitude, data.longitude);
+    $.each(jobs.jobpost, function (key, data) {
+
+        var location = new google.maps.LatLng(jobs.latitude,jobs.longitude);
 
         var marker = new google.maps.Marker({
             position: location,
             map: map,
             icon: icon,
-            title: data.title
+            title: jobs.title
         });
 
         var details = data.shortdescription + ", " + data.contacts + ".";
