@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template for displaying all pages
  *
@@ -12,141 +13,55 @@
  * @package jobview
  */
 
-get_header(); ?>
+get_header();
+?>
+<style>
+#map {
+  width: 100%;
+  height: 80vh;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+</style>
+<div id="map"></div>
+<script type="text/javascript">
 
-    <style>
+var map;
 
-      #map-container {
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 10,
+    center: new google.maps.LatLng(55.4, 10.5)
+  });
+};
 
-        width: 100%;
-      }
-      #map {
-        width: 100%;
-        height: 100vh;
-        position: absolute;
-        z-index: -1;
-      }
-      #actions {
-        list-style: none;
-        padding: 0;
-      }
+var jobsList;
+var features = [];
 
-      .jw-fp-map{
-        padding:0;
+jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
 
-      }
+  jQuery.each(json, function(i, val) {
 
-      #jw-fp-maptext{
+    var new_array = [
+      lat: val.locations[0].latitude,
+      lng: val.locations[0].longitude];
+    features.push(new_array);
 
+  });
 
-        margin-top: 250px;
-        position: absolute;
-        z-index: 10;
-      }
+});
 
-      #overlay {
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(40,135,145,0.6);
-        z-index: 5;
+console.table(features);
 
-      }
+features.forEach(function(feature) {
+  var marker = new google.maps.Marker({
+    position: feature.position,
+    map: map
+  });
 
-      #jw-fp-maptext h1, p{
-        color: #ffffff;
-      }
-
-      .jw-search-icon{
-        background-image: url("/icons/jw-search.png");
-      }
-
-      #jw-map-search {
-        border-radius: 100px;
-        border-style: none;
-        padding: 12px 15px;
-        width: 30%;
-        font-size: 12px;
-      }
-
-
-    </style>
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
-    async defer></script>
-  <!--   <script src="https://maps.googleapis.com/maps/api/js"></script> -->
-    <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
-    <script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
-
- </head>
-<!--   MAP SECTION  -->
-<section id="" class="jw-fp-map container-fluid">
-
-       <div class="row" style="margin-left:0; margin-right:0;">
-         <div id="map">
-         </div>
-          <div id="overlay">
-       </div>
-       <div id="jw-fp-maptext" class="col-lg-12 text-center">
-         <h1>Tryk på kortet eller brug søgefeltet</h1>
-         <p>Søg mellem mere end <span>12.535</span> jobs i hele Danmark</p>
-         <form>
-       <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
-     </form> <span class="jw-search-icon"></span>
-     </div>
-     <!--  row end -->
-   </div>
- </section>
-
- <!--   JOB POST SLIDER SECTION  -->
- <div class="container">
-   <div class="row">
-
-   </div>
-   <!--  row end -->
- </div>
-
-  <!--   NEWS SECTION  -->
-  <div class="container">
-    <div class="row">
-
-    </div>
-    <!--  row end -->
-  </div>
-
-  <!--   JOB AGENT SECTION  -->
-  <div class="container">
-    <div class="row">
-
-    </div>
-    <!--  row end -->
-  </div>
-
-  <!--   FEATURED PARTNERS SECTION  -->
-  <div class="container">
-    <div class="row">
-
-    </div>
-    <!--  row end -->
-  </div>
-
-<!-- Replace the value of the key parameter with your own API key. -->
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"> </script>
-<script>
-var offsetHeight = document.getElementById('map').offsetHeight;
-document.getElementById('overlay').style.height = offsetHeight+'px';
-
-var offsetHeight = document.getElementById('map').offsetHeight;
-document.getElementById('jw-fp-maptext').style.height = offsetHeight+'px';
-
-</script>
-<script>
-
-jQuery('#overlay').on('click', function(){
-document.getElementById("overlay").style.display = "none";
 });
 </script>
-<?php get_footer(); ?>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"></script>
