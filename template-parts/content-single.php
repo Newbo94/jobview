@@ -33,27 +33,34 @@
 			<div class="meta-data-text">
 				<div class="author-meta">
 
-					<?php
 
-					if ( is_singular() ) :
-						the_title( '<h1 class="entry-title">', '</h1>' );
-						else :
-							the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-						endif; ?>
-					<p>
+            <?php
+
+      			if ( is_singular() ) :
+      				the_title( '<h1 class="entry-title">', '</h1>' );
+      				else :
+      					the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+      				endif; ?>
+
+
 						Af:
-						<?php the_author_meta( 'display_name' ); ?>, &nbsp; </p>
+						<?php the_author_meta( 'display_name' ); ?>, &nbsp;
 						<?php the_author_meta( 'description' ); ?>
 
 
 				<p>	<?php the_time('j/m/y g:i ') ?>
 
 				</p>
+        </div>
 
-			</div>
+
+
 <?php
 
-				if ( 'post' === get_post_type() ) : ?>
+				if ( 'post' === get_post_type() ) :
+
+          ?>
+
 			</div> <!-- meta data text -->
 		</div>
 
@@ -94,16 +101,13 @@ if ( $user ) :
 
 	<div class="author-meta-text">
 			<p>
-				Skrevet af: <br />
-				<?php the_author_meta( 'display_name' ); ?></p>
+				Skrevet af:
+				<?php the_author_meta( 'display_name' ); ?><p>
 
 
-<p>
-
-				<?php the_author_meta( 'description' ); ?></p>
+				<p>	<?php the_author_meta( 'description' ); ?></p>
 </div>
 			</div>
 		<footer class="entry-footer">
-			
 		</footer><!-- .entry-footer -->
 	</article><!-- #post-<?php the_ID(); ?> -->

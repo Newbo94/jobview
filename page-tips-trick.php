@@ -33,7 +33,20 @@ justify-content: center;
   <div class="row">
     <div class="col-lg-12">
       <!-- Henter Custom taxonomy tips-tricks-cat som links -->
-
+      <?php
+      print apply_filters( 'taxonomy-images-queried-term-image', '', array(
+        'attr'       => array(
+            'alt'   => 'Custom alternative text',
+            'class' => 'my-class-list bunnies turtles',
+            'src'   => 'this-is-where-the-image-lives.png',
+            'title' => 'Custom Title',
+            ),
+        'before'     => '<div id="my-custom-div">',
+        'after'      => '</div>',
+        'image_size' => 'medium'
+    ) );
+      
+?>
       <?php
       				$terms = get_terms( 'tips-tricks-cat' );
 
@@ -57,13 +70,6 @@ justify-content: center;
               }
 
               echo '</h3></div>';
-
-
-
-
-
-
-
 
 
       				?>

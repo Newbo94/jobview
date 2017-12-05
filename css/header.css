@@ -27,6 +27,20 @@
 }
 
 
+.menu-item-has-children {
+
+}
+
+.dropdown-menu {
+  border: none;
+  border-radius: 0px;
+}
+
+.menu-item-has-children:hover  .dropdown-menu {
+    display: block;
+    position: absolute;
+}
+
 
 
 #navigation-menu {

@@ -40,10 +40,12 @@ infoWindow = new google.maps.InfoWindow;
       var infowindow = new google.maps.InfoWindow();
 
 //LOADING JSON FILE START//
+    var jobslist = "http://hr-skyen.dk/hr/api/jobs/testvirksomhed";
+    console.log(jobslist);
 
-    $.getJSON("http://localhost:8888/wordpress/wp-content/themes/jobview/data/test-job-post.json", function(jobs) {
+    jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(jobs) {
 
-    $.each(jobs.jobpost, function (key, data) {
+    jQuery.each(jobs.jobpost, function (key, data) {
 
         var location = new google.maps.LatLng(jobs.latitude,jobs.longitude);
 
