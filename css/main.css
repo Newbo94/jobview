@@ -5,8 +5,13 @@
 /* Boady  */
 body {
   background-color: #F7F7F7;
+  font-family: source sans pro;
 }
 
+
+a {
+  color: #0F4155;
+}
 
 /* Text heading og p */
 
@@ -61,4 +66,15 @@ color: #3A3A3A;
 
 input:focus {
   outline: none;
+}
+
+
+/* Heading overline */
+
+.overline {
+width: 120px;
+background: #FCB123;
+height: 5px;
+display: block;
+margin-bottom: 10px;
 }

@@ -30,7 +30,7 @@ background-image: url("<?php echo get_template_directory_uri(); ?>/image/bg-elem
 background-position: center;
 background-size: cover;
 background-repeat: repeat-y;
-background-position: initial;
+
 
 
 

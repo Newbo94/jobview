@@ -234,6 +234,55 @@ function register_taxonomy_sectors() {
     register_taxonomy( 'tips-tricks-cat', array('tips-tricks'), $args );
 }
 
+/* Taxonomy til FAQ */
+
+add_action( 'init', 'register_taxonomy_faq' );
+
+function register_taxonomy_faq() {
+
+    $labels = array(
+        'name' => _x( 'FAQ ', 'FAQ' ),
+        'singular_name' => _x( 'FAQ ', 'FAQ' ),
+        'search_items' => _x( 'Search FAQ', 'FAQ' ),
+        'popular_items' => _x( 'Popular FAQ', 'FAQ' ),
+        'all_items' => _x( 'All FAQ ', 'FAQ' ),
+        'parent_item' => _x( 'Parent FAQ Category', 'FAQ ' ),
+        'parent_item_colon' => _x( 'Parent FAQ Category:', ' FAQ ' ),
+        'edit_item' => _x( 'Edit FAQ ', 'FAQ' ),
+        'update_item' => _x( 'Update FAQ', 'FAQ ' ),
+        'add_new_item' => _x( 'Add New FAQ ', 'FAQ ' ),
+        'new_item_name' => _x( 'New FAQ Name', 'FAQ ' ),
+        'separate_items_with_commas' => _x( 'Separate FAQ Category with commas', 'FAQ' ),
+        'add_or_remove_items' => _x( 'Add or remove FAQ Category', 'FAQ Category' ),
+        'choose_from_most_used' => _x( 'Choose from the most used FAQ Category', 'FAQ Category' ),
+        'menu_name' => _x( 'FAQ Category', 'FAQ Category' ),
+    );
+
+    $args = array(
+        'labels' => $labels,
+        'public' => true,
+        'show_in_nav_menus' => true,
+				'publicly_queryable' => true,
+        'show_ui' => true,
+        'show_tagcloud' => false,
+        'hierarchical' => true,
+
+        'rewrite' => array(
+            'with_front' => false,
+            'hierarchical' => true
+        ),
+        'query_var' => true
+    );
+
+    register_taxonomy( 'FAQ-cat', array('faq'), $args );
+}
+
+
+
+
+
+
+
 /* Add bootstrap support to the Wordpress theme*/
 
 function theme_add_bootstrap() {
@@ -326,43 +375,14 @@ add_filter('excerpt_more', 'new_excerpt_more');
 
 
 
+/* ALLOW SPAN TAG IN WORDPRESS EDITOR */
+/* Kilde https://blogsneeraj.wordpress.com/2016/02/16/allow-span-tag-in-wordpress-editor/ */
 
-/**
-* Kilde https://wordpress.stackexchange.com/questions/250243/customize-comment-form
- * Customize comment form default fields.
- * Move the comment_field below the author, email, and url fields.
- */
-function wpse250243_comment_form_default_fields( $fields ) {
-    $commenter     = wp_get_current_commenter();
-    $user          = wp_get_current_user();
-    $user_identity = $user->exists() ? $user->display_name : '';
-    $req           = get_option( 'require_name_email' );
-    $aria_req      = ( $req ? " aria-required='true'" : '' );
-
-    $fields = [
-        'author' => '<div class="top-input">
-
-				<p class="comment-form-author">' . '<label for="author">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required"></span>' : '' ) . '</label> ' .
-                    '<input id="author" placeholder="Navn*" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="30" maxlength="245"' . $aria_req . $html_req . ' /></p>',
-        'email'  => '<p class="comment-form-email"><label for="email">' . __( '', 'textdomain'  ) . ( $req ? ' <span class="required"></span>' : '' ) . '</label> ' .
-                    '<input id="email" placeholder="E-mail*" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="30" maxlength="100" aria-describedby="email-notes"' . $aria_req . $html_req  . ' /></p></div>',
-        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( '', 'noun', 'textdomain' ) . '</label> <textarea id="comment" placeholder="Din besked*"name="comment" cols="45" rows="8" maxlength="65525" aria-required="true" required="required"></textarea></p>',
-    ];
-
-    return $fields;
-}
-add_filter( 'comment_form_default_fields', 'wpse250243_comment_form_default_fields' );
-
-/**
- * Remove the original comment field because we've added it to the default fields
- * using wpse250243_comment_form_default_fields(). If we don't do this, the comment
- * field will appear twice.
- */
-function wpse250243_comment_form_defaults( $defaults ) {
-    if ( isset( $defaults[ 'comment_field' ] ) ) {
-        $defaults[ 'comment_field' ] = '';
-    }
-
-    return $defaults;
-}
-add_filter( 'comment_form_defaults', 'wpse250243_comment_form_defaults', 10, 1 );
+function override_mce_options($initArray)
+{
+  $opts = '*[*]';
+  $initArray['valid_elements'] = $opts;
+  $initArray['extended_valid_elements'] = $opts;
+  return $initArray;
+ }
+ add_filter('tiny_mce_before_init', 'override_mce_options');
