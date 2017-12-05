@@ -84,5 +84,63 @@ margin-left: -50px;
   margin-left: -50px;
 
 }
+
+
+
+
+
+/* registering plugin styling  */
+
+
+
+.um-page-register .heading h1 {
+  margin-top: 0px;
 }
+
+.um-field-area {
+      margin-bottom: 20px;
+}
+
+.um-register {
+  margin: 0px !important;
+}
+
+
+
+
+.um-148.um input[type=submit].um-button {
+
+    background: #288791 !important ;
+}
+
+.um-field-area input {
+color: #666;
+border-radius: 100px !important;
+height: 50px !important;
+  border: none !important;
+}
+
+
+.um-148.um .um-form input[type=text], .um-148.um .um-form input[type=tel], .um-148.um .um-form input[type=password], .um-148.um .um-form textarea {
+    color: #666;
+    height: 50px !important;
+    border: none !important;
+}
+.um-half .um-button {
+  border-radius: 100px !important;
+  border: none !important;
+}
+
+
+.um-148.um .um-button {
+    border-radius: 100px !important;
+    border: none !important;
+}
+
+.um-field-area input:focus {
+  border: none !important;
+}
+
+.um-field-label {
+  display: none !important;
 }
