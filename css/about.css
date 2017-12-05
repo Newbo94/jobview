@@ -1,8 +1,19 @@
 /** Mission, vision & værdier sektion **/
+.mvv-section {
+    height: 430px;
+}
+
+.mvv-section img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    position: absolute;
+}
+
 .mvv-section .blur {
     background-color: #0f4155;
     overflow: hidden;
-    filter: blur(50px);
+    filter: blur(5px);
     position: absolute;
     height: 400px;
     top: -50px;
@@ -13,20 +24,33 @@
 }
 
 .mvv-section .widget {
-    border-top: 2px solid rgba(255, 255, 255, .5);
-    border-bottom: 2px solid rgba(255, 255, 255, .5);
     height: 300px;
     width: 300px;
     overflow: hidden;
     border-radius: 50%;
+    margin-bottom: 0;
+    top: 65px;
+}
+
+.mvv-section .values {
+    height: 320px;
+    width: 320px;
+    top: 55px;
 }
 
 .mvv-section .center {
     position: absolute;
+    margin: auto;
+    left: 0;
+    right: 0;
 }
 
 .mvv-section .text {
     margin: 40px;
+}
+
+.mvv-section .value {
+    margin: 55px;
 }
 
 .mvv-section .text h3, .text p {
@@ -46,7 +70,6 @@
 
 
 
-
 /** Om Jobview sektion **/
 .about-section {
     margin-top: 100px;
@@ -61,20 +84,89 @@
 }
 
 
+
 /** Jobs hos Jobview sektion **/
+.jobsection img {
+    width: 100%;
+    position: absolute;
+    height: 911px;
+    object-fit: cover;
+}
+
+.jobsection .jobsection-opslag {
+    position: absolute;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.jobsection h2 {
+    color: white;
+}
+
+.jobsection .jobsection-opslag-single {
+    background-color: white;
+    margin-top: 30px;
+}
+
+.jobsection .jobsection-opslag-single img {
+    height: 230px;
+    width: 230px;
+    position: inherit;
+    margin: 30px;
+}
+
+.tekst-opslag-single {
+    padding: 30px;
+}
+
+.opslag-single-info {
+    margin: 0;
+}
+
+.opslag-single-info strong {
+    font-weight: bold;
+}
+
+.tekst-opslag-single button {
+    position: absolute;
+    right: 30px;
+    bottom: 30px;
+}
+
+.uopfordret-btn {
+    padding: .6em 1em .4em;
+    border-radius: 200px;
+    line-height: 1.5;
+    border-color: #fcb132;
+    background: #fcb132;
+    width: 250px;
+    color: white;
+    font-size: 20px;
+    margin-top: 30px;
+    float: right;
+}
+
+.padding-0-btn {
+    padding: 0;
+}
 
 
 
 /** Presseoplæg sektion **/
 
 
+
+
 /** RESPONSIVE **/
-
-
 @media only screen and (max-width : 1199px) {
     .about-section img {
         height: 400px;
         width: 400px;
+    }
+    
+    .jobsection .jobsection-opslag-single img {
+        height: 200px;
+        width: 200px;
     }
 }
 
@@ -86,11 +178,67 @@
     .about-section-txt {
         margin-top: 30px;
     }
+    
+    .mvv-section .value {
+        margin: 40px;
+    }
+    
+    .mvv-section .values {
+        height: 300px;
+        width: 300px;
+        top: 395px;
+    }
+    
+    .mvv-section .vision {
+        top: 725px;
+    }
+    
+    .mvv-section {
+        height: 1090px;
+    }
+    
+    .mvv-section img {
+        height: 1090px;
+    }
+    
+    .jobsection img {
+        height: 935px;
+    }
+}
+
+@media only screen and (max-width : 767px) {
+    .jobsection .jobsection-opslag-single img {
+        margin: auto;
+        margin-top: 30px;
+        display: block;
+    }
+    
+    .tekst-opslag-single button {
+        position: unset;
+        margin: auto;
+        margin-top: 25px;
+        display: block;
+    }
+    
+    .jobsection .jobsection-opslag-single img {
+        height: 230px;
+        width: 230px;
+    }
+    
+    .jobsection img {
+        height: 1569px;
+    }
 }
 
 @media only screen and (max-width : 575px) {
     .about-section img {
         height: 300px;
         width: 300px;
+    }
+}
+
+@media only screen and (max-width : 421px) {
+    .jobsection img {
+        height: 1655px;
     }
 }
