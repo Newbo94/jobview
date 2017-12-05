@@ -86,6 +86,10 @@
 
 
 /** Jobs hos Jobview sektion **/
+.jobsection {
+    height: 911px;
+}
+
 .jobsection img {
     width: 100%;
     position: absolute;
@@ -153,7 +157,49 @@
 
 
 /** Presseoplæg sektion **/
+.press-section {
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
 
+.press-section img {
+    height: 150px;
+    width: 150px;
+}
+
+.press-single {
+    margin-top: 30px;
+}
+
+.press-section .press-single h3 {
+    margin: 0;
+    text-align: left;
+}
+
+.press-section .press-single a {
+    font-size: 25px;
+    color: #3A3A3A;
+}
+
+.press-section .press-single a:hover {
+    text-decoration: none;
+    color: #288791;
+}
+
+.press-section h3 {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.press-section a {
+    color: #0f4155;
+    font-size: 25px;
+}
+
+.press-section a:hover {
+    text-decoration: none;
+    color: #288791;
+}
 
 
 
@@ -204,6 +250,10 @@
     .jobsection img {
         height: 935px;
     }
+    
+    .jobsection {
+        height: 935px;
+    }
 }
 
 @media only screen and (max-width : 767px) {
@@ -228,6 +278,10 @@
     .jobsection img {
         height: 1569px;
     }
+    
+    .jobsection {
+        height: 1569px;
+    }
 }
 
 @media only screen and (max-width : 575px) {
@@ -235,10 +289,27 @@
         height: 300px;
         width: 300px;
     }
+    
+    .press-section .press-single a {
+        font-size: 20px;
+    }
+    
+    .press-section img {
+        height: 100px;
+        width: 100px;
+    }
+    
+    .press-section a {
+        font-size: 20px;
+    }
 }
 
 @media only screen and (max-width : 421px) {
     .jobsection img {
+        height: 1655px;
+    }
+    
+    .jobsection {
         height: 1655px;
     }
 }
