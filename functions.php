@@ -184,6 +184,41 @@ $labels = array(
   register_post_type( 'FAQ', $args );
 
 
+{
+	$labels = array(
+	 			'name'          => _x( 'Presse indlæg', 'post type general name' ),
+        'singular_name'      => _x( 'Presse indlæg', 'post type singular name' ),
+        'add_new'            => _x( 'Add New', 'Indlæg' ),
+        'add_new_item'       => __( 'Add New Indlæg' ),
+        'edit_item'          => __( 'Edit Indlæg' ),
+        'new_item'           => __( 'New Indlæg' ),
+        'all_items'          => __( 'All Indlæg' ),
+        'view_item'          => __( 'View Indlæg' ),
+        'search_items'       => __( 'Search Indlæg' ),
+        'not_found'          => __( 'No Indlæg found' ),
+        'not_found_in_trash' => __( 'No Indlæg found in the Trash' ),
+        'parent_item_colon'  => '',
+
+        'menu_name'          => 'Presse indlæg'
+    );
+    $args = array(
+        'labels'        => $labels,
+        'description'   => 'Presse indlæg',
+        'public'        => true,
+				'publicly_queryable' => true,
+        'hierarchical'      => true,
+        'show_ui'           => true,
+        'show_in_nav_menus' => true,
+    		'menu_icon'					 => 'dashicons-lightbulb',
+        'supports'      => array( 'title', 'editor',  'author', 'thumbnail', 'excerpt', 'comments' ),
+        'has_archive'   => true,
+
+        //'taxonomies' => array('category'),
+    );
+    register_post_type( 'presse', $args );
+
+}
+
 
 add_action( 'init', 'jobview_custom_post_type' );
 
