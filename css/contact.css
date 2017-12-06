@@ -1,16 +1,9 @@
-.contact-hr {
-    background-color: #fcb132;
-    height: 3px;
-    width: 100px;
-    float: left;
-}
-
 .contactsection h3 {
     font-size: 22px;
     text-transform: uppercase;
 }
 
-.contactsection img {
+.contactsupport img {
     height: 110px;
     width: 110px;
     object-fit: cover;

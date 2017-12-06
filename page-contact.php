@@ -16,9 +16,35 @@
 
         <div class="row top-offset-30">
             <div class="col-lg-6">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2265.5741417671584!2d10.38694701591689!3d55.40033558046054!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x464cdfff36caefcb%3A0x4c76560ba9b75ed7!2sN%C3%B8rregade+71%2C+5000+Odense+C!5e0!3m2!1sda!2sdk!4v1512044925384" width="600" height="450" frameborder="0" style="border:0" allowfullscreen class="hr-lokation"></iframe>
+                <div id="map" class="hr-lokation"></div>
             </div><!--col-md-6-->
 
+            <script>
+                
+                
+                function initMap() {
+                    var jobview = {lat: 55.4004262, lng: 10.38916370000004};
+                    
+                    var map = new google.maps.Map(document.getElementById('map'), {
+                        zoom: 16,
+                        center: jobview
+                    });
+                    
+                    var logoIcon = {
+                        url: '../wp-content/themes/jobview/icons/logo_icon.svg'
+                    };
+                    
+                    var marker = new google.maps.Marker({
+                        position: jobview,
+                        icon: logoIcon,
+                        map: map
+                    });
+                }
+            </script>
+            
+            <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"></script>
+           
             <div class="col-lg-6 d-flex align-items-center">
                 <div class="contactsupport">
                     <div class="row kundesupport">
