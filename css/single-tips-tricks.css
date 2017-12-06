@@ -363,3 +363,20 @@ padding-top: 30px;
       -ms-flex-pack: center;
           justify-content: center;
 }
+
+
+.news-bg {
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+height: auto;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}

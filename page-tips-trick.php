@@ -13,20 +13,15 @@
 
 <style>
 
+
 .news-bg {
-  background-image: url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-background-size: cover;
-height: 450px;
-justify-content: center;
-    display: flex;
-    align-items: center;
+  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.jpg");
 }
 
 
 
 </style>
+
 
 
 <div class="container top-offset-50">

@@ -14,7 +14,7 @@
 	</div><!-- #content -->
 
 
-<div class="bg-color top-offset-50">
+<div class="bg-color">
 	<footer id="colophon" class="site-footer container">
 
 		<div class="site-info row top-offset-50">

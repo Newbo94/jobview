@@ -199,16 +199,16 @@ a:hover {
       background-color: #0F4155;
 }
 
-footer .menu-item a {
+#colophon .menu-item a {
   color: #fff;
 }
 
-footer .menu-item {
+#colophon .menu-item {
   margin-bottom: 10px;
   margin-top: 10px;
 }
 
-footer h4 {
+#colophon h4 {
   color: #fff;
 }
 
@@ -225,17 +225,17 @@ footer h4 {
 opacity: 0.5;
 }
 
-footer .menu  {
+#colophon .menu  {
   padding-left: 0px;
   margin-left: 0px;
   margin-top: 20px;
 }
 
-footer .textwidget {
+#colophon .textwidget {
   margin-top: 20px;
 }
 
-footer span {
+#colophon span {
   width: 170px;
     /* height: 193px; */
     background: #fff;
@@ -260,7 +260,7 @@ footer span {
 
 }
 
-footer .site-info .col-lg-3 {
+#colophon .site-info .col-lg-3 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -299,6 +299,37 @@ footer .site-info .col-lg-3 {
 }
 
 
+
+/* 404 */
+
+.error404 .site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
+.error404 .page-header h1 {
+  font-size: 150px;
+  margin-bottom: 20px;
+}
+
+.btn-typ3 {
+background-color: #FCB123;
+}
+
+.error404 .call-btn .btn-type1 {
+      padding: 1em 2.4em 1em 2.4em;
+          margin: 10px;
+          margin-bottom: 100px;
+}
 
 @media screen and (max-width: 980px) {
 

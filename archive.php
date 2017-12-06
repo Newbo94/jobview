@@ -11,20 +11,15 @@ get_header(); ?>
 
 <style>
 
+
 .news-bg {
-  background-image: url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-background-size: cover;
-height: 350px;
-justify-content: center;
-    display: flex;
-    align-items: center;
+  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.jpg");
 }
 
 
 
 </style>
+
 
 
 
@@ -129,8 +124,8 @@ if(is_archive())
 	</div><!-- #primary -->
 
 
-  <div class="container-fluid news-bg">
-    <div class="row">
+  <div class="container-fluid news-bg top-offset-50">
+    <div class="row" style="    padding: 50px 0px;">
       <div class="col-lg-12">
 
             <div class="top-offset-50">
