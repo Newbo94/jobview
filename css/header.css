@@ -193,6 +193,144 @@ a:hover {
 }
 
 
+/* footer */
+
+.bg-color {
+      background-color: #0F4155;
+}
+
+#colophon .menu-item a {
+  color: #fff;
+}
+
+#colophon .menu-item {
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+#colophon h4 {
+  color: #fff;
+}
+
+.textwidget p {
+  color: #fff;
+}
+
+.site-info {
+  margin-bottom: 50px;
+}
+
+.site-end p {
+  color: #fff;
+opacity: 0.5;
+}
+
+#colophon .menu  {
+  padding-left: 0px;
+  margin-left: 0px;
+  margin-top: 20px;
+}
+
+#colophon .textwidget {
+  margin-top: 20px;
+}
+
+#colophon span {
+  width: 170px;
+    /* height: 193px; */
+    background: #fff;
+    height: 2px;
+    opacity: 0.2;
+    display: block;
+    margin-bottom: 10px;
+
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg);
+    margin-top: 90px;
+}
+
+
+.span-lines {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+
+}
+
+#colophon .site-info .col-lg-3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+-webkit-box-pack: center;
+    -ms-flex-pack: center;
+        justify-content: center;
+
+}
+
+#footer-sidebar1 {
+      border-right: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+#footer-sidebar2 {
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+#footer-sidebar3 {
+    border-right: 2px solid rgba(255, 255, 255, 0.15);
+}
+
+
+@media screen and (max-width: 933px){
+  #footer-sidebar1 {
+        border:none;
+  }
+
+  #footer-sidebar2 {
+          border:none;
+  }
+
+  #footer-sidebar3 {
+          border:none;
+  }
+
+}
+
+
+
+/* 404 */
+
+.error404 .site-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+
+.error404 .page-header h1 {
+  font-size: 150px;
+  margin-bottom: 20px;
+}
+
+.btn-typ3 {
+background-color: #FCB123;
+}
+
+.error404 .call-btn .btn-type1 {
+      padding: 1em 2.4em 1em 2.4em;
+          margin: 10px;
+          margin-bottom: 100px;
+}
+
 @media screen and (max-width: 980px) {
 
   #menu-menu-1 {

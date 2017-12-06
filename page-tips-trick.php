@@ -13,15 +13,9 @@
 
 <style>
 
+
 .news-bg {
-  background-image: url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-background-size: cover;
-height: 450px;
-justify-content: center;
-    display: flex;
-    align-items: center;
+  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.jpg");
 }
 
 
@@ -29,56 +23,190 @@ justify-content: center;
 </style>
 
 
-<div class="container">
-  <div class="row">
-    <div class="col-lg-12">
-      <!-- Henter Custom taxonomy tips-tricks-cat som links -->
-      <?php
-      print apply_filters( 'taxonomy-images-queried-term-image', '', array(
-        'attr'       => array(
-            'alt'   => 'Custom alternative text',
-            'class' => 'my-class-list bunnies turtles',
-            'src'   => 'this-is-where-the-image-lives.png',
-            'title' => 'Custom Title',
-            ),
-        'before'     => '<div id="my-custom-div">',
-        'after'      => '</div>',
-        'image_size' => 'medium'
-    ) );
-      
-?>
-      <?php
-      				$terms = get_terms( 'tips-tricks-cat' );
 
-
-              echo '<div class="cat-link">
-
-              <h3>';
-
-              foreach ( $terms as $term ) {
-
-                  // The $term is an object, so we don't need to specify the $taxonomy.
-                  $term_link = get_term_link( $term );
-
-                  // If there was an error, continue to the next term.
-                  if ( is_wp_error( $term_link ) ) {
-                      continue;
-                  }
-
-                  // We successfully got a link. Print it out.
-                  echo '<a href="' . esc_url( $term_link ) . '">' . $term->name . '</a>';
-              }
-
-              echo '</h3></div>';
-
-
-      				?>
-
-
-
-    </div>
-  </div>
+<div class="container top-offset-50">
+<div class="row">
+  <div class="heading">
+  <span class="overline"></span>
+  <h1>Tips og tricks til din jobsøgning</h1>
 </div>
+</div>
+
+  <div class="row">
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_');
+
+  if( !empty($image) ): ?>
+
+  	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('cat-title'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_2')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_2');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_2'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_3')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_3');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_3'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_4')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_4');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_4'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_5')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_5');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_5'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_6')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_6');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_6'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_7')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_7');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_7'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+
+    <div class="col-lg-3 cat-link-single">
+
+      <a href="    <?php the_field('link_til_kategori_8')?>">
+
+        <div class="pos-rel">
+          <?php
+
+  $image = get_field('cat-img_8');
+
+  if( !empty($image) ): ?>
+
+    <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+  <?php endif; ?>
+          <div class="overlay-col"></div>
+          <h3 class="post-ab"><?php the_field('kategori_title_8'); ?></h3>
+          </div>
+        </a>
+    </div> <!-- cat-link-single -->
+
+
+  </div> <!-- row -->
+</div> <!-- container -->
 
 
 <div class="container-fluid news-bg">

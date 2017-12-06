@@ -11,72 +11,17 @@ get_header(); ?>
 
 <style>
 
+
 .news-bg {
-  background-image: url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.png");
-  background-position: center;
-  background-repeat: no-repeat;
-background-size: cover;
-height: 350px;
-justify-content: center;
-    display: flex;
-    align-items: center;
+  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.jpg");
 }
 
 
 
 </style>
 
-<div class="container-fluid news-bg">
-  <div class="row">
-    <div class="col-lg-12">
-
-          <div class="top-offset-50">
-          <script type="text/javascript">(function() {
-	if (!window.mc4wp) {
-		window.mc4wp = {
-			listeners: [],
-			forms    : {
-				on: function (event, callback) {
-					window.mc4wp.listeners.push({
-						event   : event,
-						callback: callback
-					});
-				}
-			}
-		}
-	}
-})();
-</script><!-- MailChimp for WordPress v4.1.11 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-21" method="post" data-id="21" data-name="Jobview newsletter" ><div class="mc4wp-form-fields"><span></span>
-
-<h2>
-  Nyhedsbrevet med de bedste jobnyheder
-</h2>
-
-<h5>
-  Gør ligesom tusinde andre jobsøgende og tilmeld dig
-</h5>
 
 
-<p>
-	<div class="input-fi">
-
-
-	<input class="input-em" type="email" name="EMAIL" placeholder="Indsæt Email" required />
-
-
-	<input class="input-na" type="name" name="Navn" placeholder="Indsæt navn" required />
-
-  <input class="input-se" type="submit" value="Tilmeld" />
-      </div>
-</p>
-
-<label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1511897545" /><input type="hidden" name="_mc4wp_form_id" value="21" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /></div><div class="mc4wp-response"></div></form><!-- / MailChimp for WordPress Plugin -->
-          </div>
-      	<!-- do stuff ... -->
-
-    </div>
-  </div>
-</div>
 
 
 
@@ -177,6 +122,61 @@ if(is_archive())
 </div>
 		</main><!-- #main -->
 	</div><!-- #primary -->
+
+
+  <div class="container-fluid news-bg top-offset-50">
+    <div class="row" style="    padding: 50px 0px;">
+      <div class="col-lg-12">
+
+            <div class="top-offset-50">
+            <script type="text/javascript">(function() {
+  	if (!window.mc4wp) {
+  		window.mc4wp = {
+  			listeners: [],
+  			forms    : {
+  				on: function (event, callback) {
+  					window.mc4wp.listeners.push({
+  						event   : event,
+  						callback: callback
+  					});
+  				}
+  			}
+  		}
+  	}
+  })();
+  </script><!-- MailChimp for WordPress v4.1.11 - https://wordpress.org/plugins/mailchimp-for-wp/ --><form id="mc4wp-form-1" class="mc4wp-form mc4wp-form-21" method="post" data-id="21" data-name="Jobview newsletter" ><div class="mc4wp-form-fields"><span></span>
+
+  <h2>
+    Nyhedsbrevet med de bedste jobnyheder
+  </h2>
+
+  <h5>
+    Gør ligesom tusinde andre jobsøgende og tilmeld dig
+  </h5>
+
+
+  <p>
+  	<div class="input-fi">
+
+
+  	<input class="input-em" type="email" name="EMAIL" placeholder="Indsæt Email" required />
+
+
+  	<input class="input-na" type="name" name="Navn" placeholder="Indsæt navn" required />
+
+    <input class="input-se" type="submit" value="Tilmeld" />
+        </div>
+  </p>
+
+  <label style="display: none !important;">Leave this field empty if you're human: <input type="text" name="_mc4wp_honeypot" value="" tabindex="-1" autocomplete="off" /></label><input type="hidden" name="_mc4wp_timestamp" value="1511897545" /><input type="hidden" name="_mc4wp_form_id" value="21" /><input type="hidden" name="_mc4wp_form_element_id" value="mc4wp-form-1" /></div><div class="mc4wp-response"></div></form><!-- / MailChimp for WordPress Plugin -->
+            </div>
+        	<!-- do stuff ... -->
+
+      </div>
+    </div>
+  </div>
+
+
 
 <?php
 get_sidebar();

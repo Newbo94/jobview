@@ -86,6 +86,19 @@ margin-left: -50px;
 }
 
 
+.cat-link h3 a {
+  padding: 50px;
+
+}
+
+.cat-link h3 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
 
 
 
@@ -143,4 +156,56 @@ height: 50px !important;
 
 .um-field-label {
   display: none !important;
+}
+
+
+/* Post taxonomy tips tricks  */
+
+
+.cat-link-single {
+  margin-bottom: 50px;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
+.cat-link-single:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.cat-link-single img {
+  border-radius: 200px;
+      width: 230px;
+      height: 230px;
+      -o-object-fit: cover;
+         object-fit: cover;
+}
+
+
+.pos-rel {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+}
+
+.post-ab {
+  position: absolute;
+  color: #fff;
+  z-index: 10;
+}
+
+.overlay-col {
+  background-color: rgba(135, 205, 185, 0.39);
+    width: 230px;
+    border-radius: 200px;
+    height: 230px;
+    z-index: 10;
+    position: absolute;
 }

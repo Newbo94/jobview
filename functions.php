@@ -313,6 +313,47 @@ function register_taxonomy_faq() {
 }
 
 
+/* Footer widgets  */
+
+
+register_sidebar( array(
+'name' => 'Footer Sidebar 1',
+'id' => 'footer-sidebar-1',
+'description' => 'Vises i footeren',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h4 class="widget-title">',
+'after_title' => '</h4>',
+) );
+register_sidebar( array(
+'name' => 'Footer Sidebar 2',
+'id' => 'footer-sidebar-2',
+'description' => 'Vises i footere',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h4 class="widget-title">',
+'after_title' => '</h4>',
+) );
+register_sidebar( array(
+'name' => 'Footer Sidebar 3',
+'id' => 'footer-sidebar-3',
+'description' => 'Vises i footere',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h4 class="widget-title">',
+'after_title' => '</h4>',
+) );
+
+register_sidebar( array(
+'name' => 'Footer Sidebar 4',
+'id' => 'footer-sidebar-4',
+'description' => 'Vises i footere',
+'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+'after_widget' => '</aside>',
+'before_title' => '<h4 class="widget-title">',
+'after_title' => '</h4>',
+) );
+
 
 
 

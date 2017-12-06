@@ -160,14 +160,14 @@
                 </div><!--col-md-2-->
                 
                 <div class="col-xl-10 col-md-9 col-8 d-flex align-items-center">
-                    <h3><a href="<?php the_content(); ?>"><?php the_title(); ?></a></h3>
+                    <h3><a href="<?php the_field('press_links'); ?>"><?php the_title(); ?></a></h3>
                 </div><!--col-md-10-->
             </div><!--row-->
             <?php wp_reset_postdata(); ?>
         <?php endwhile; ?>
     <?php endif; ?>   
     
-    <h3><a href="">Se flere</a></h3>
+    <h3><a href="<?php echo get_page_link(215); ?>">Se flere</a></h3>
 </div><!--container-->
 
 
