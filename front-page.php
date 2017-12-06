@@ -31,96 +31,7 @@ get_header(); ?>
         padding: 0;
       }
 
-      .jw-fp-map{
-        padding:0;
-
-      }
-
-      .full-wrapper{
-        position: absolute;
-        width: 100%
-      }
-
-      #jw-fp-mapcontent{
-
-        position: absolute;
-        z-index: 10;
-        left: 50%;
-        top: 50%;
-        transform: translate(-50%, -50%);
-        width: 60%;
-      }
-
-      #overlay {
-        position: relative;
-        width: 100%;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background-color: rgba(40,135,145,0.6);
-        z-index: 5;
-
-      }
-
-      #jw-fp-maptext p{
-        color: #ffffff;
-
-
-      }
-
-      #jw-fp-maptext h1{
-        color: #ffffff
-      }
-      .jw-search-icon{
-        background-image: url("<?php echo get_template_directory_uri(); ?>/icons/search.png");
-      }
-
-      #jw-map-search {
-        border-radius: 100px;
-        border-style: none;
-        padding: 12px 15px;
-        width: 60%;
-        font-size: 12px;
-      }
-      .swiper-container {
-          width: 100%;
-
-        }
-        .swiper-slide {
-
-          font-size: 18px;
-          background: #fff;
-          /* Center slide text vertically */
-          display: -webkit-box;
-          display: -ms-flexbox;
-          display: -webkit-flex;
-          display: flex;
-          -webkit-box-pack: center;
-          -ms-flex-pack: center;
-          -webkit-justify-content: center;
-          justify-content: center;
-          -webkit-box-align: center;
-          -ms-flex-align: center;
-          -webkit-align-items: center;
-          align-items: center;
-        }
-
-        #category-list{
-          background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
-          -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
-          linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
-          url("<?php echo get_template_directory_uri(); ?>/image/categorylist.png");
-          -webkit-background-size: cover;
-          -moz-background-size: cover;
-          -o-background-size: cover;
-          background-size: cover;
-          width: 100%;
-          height: 100%;
-          position: relative;
-      }
-
-      #job-agent{
+      #category-list{
         background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
         -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
         linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
@@ -130,48 +41,23 @@ get_header(); ?>
         -o-background-size: cover;
         background-size: cover;
         width: 100%;
-        height: 300px;
+        height: 100%;
         position: relative;
     }
 
-      #overlay-jobagent {
-        position: absolute;
-        height: 300px;
-        background: linear-gradient(120deg, rgba(15,65,85,0.9) 0%,rgba(15,65,85,0.8) 65%,rgba(15,65,85,0) 65%);
-        padding-left: -15px;
-        margin-left: -15px;
-      }
-
-
-
-      .jb-fp-category-list{
-
-      }
-
-      .form-group {
-        margin-bottom: 1rem;
-        margin-top: 1rem;
-      }
-
-      .category-content{
-        padding:15px;
-        background-color: #ffffff;
-        border: none;
-        border-radius: 0;
-        -webkit-box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
-        box-shadow: 0px 3px 6px rgba(0,0,0,0.2);
-
-      }
-
-      #category-container{
-        padding: 25px 0 25px 0;
-      }
-
-      #w-jb-text{
-        font-size: 34px;
-        color: white;
-      }
-
+    #job-agent{
+      background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
+      -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
+      linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
+      url("<?php echo get_template_directory_uri(); ?>/image/categorylist.png");
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+      width: 100%;
+      height: 300px;
+      position: relative;
+    }
     </style>
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.css">
 
@@ -211,28 +97,28 @@ get_header(); ?>
  <!--   JOB POST SLIDER SECTION  -->
 <section class="container">
    <div class="row">
-     <div id="jw-job-post-list" class="col-xs-12 col-sm-10 col-md-10 col-lg-9 top-offset-50">
+     <div id="jw-job-post-list" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top-offset-50">
        <div class="job-list swiper-container">
          <div class="col-lg-offset-1 col-lg-10 swiper-wrapper job-post-container">
          </div>
-         <div class="swiper-button-next"></div>
-         <div class="swiper-button-prev"></div>
+         <!--<div class="swiper-button-next"></div>
+         <div class="swiper-button-prev"></div>-->
        </div>
      </div>
      </div><!--  row end -->
  </section><!-- job-list container END -->
 
  <!--   CATEGORY LIST SECTION  -->
- <section id="category-list" class="container-fluid top-offset-50" >
+ <section id="category-list" class="container-fluid" >
    <div id="category-container" class="container">
-     <div class="row top-offset-50">
-         <div class="heading">
+     <div class="">
+         <div class="heading-white">
          <span class="overline"></span>
            <h1>Mest søgte kategorier</h1>
        </div>
      </div>
      <div  class="row">
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12 ">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12 ">
          <div class="category-content">
            <h4>Informationsteknolgi</h4>
           <ul class="list-group">
@@ -245,7 +131,7 @@ get_header(); ?>
           </ul>
          </div>
        </div>
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
          <div class="category-content">
            <h4>Ledelse organisaiton HR</h4>
           <ul class="list-group">
@@ -258,7 +144,7 @@ get_header(); ?>
           </ul>
          </div>
        </div>
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
          <div class="category-content">
            <h4>Landbrug & håndværk</h4>
           <ul class="list-group">
@@ -271,7 +157,7 @@ get_header(); ?>
           </ul>
          </div>
        </div>
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
          <div class="category-content">
            <h4>Undervisning vejledning</h4>
           <ul class="list-group">
@@ -284,7 +170,7 @@ get_header(); ?>
           </ul>
          </div>
        </div>
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
          <div class="category-content">
            <h4>Social sundhed</h4>
           <ul class="list-group">
@@ -297,7 +183,7 @@ get_header(); ?>
           </ul>
          </div>
        </div>
-       <div class="jb-fp-category-list form-group col-md-4 col-sm-6 col-xs-12">
+       <div class="jb-fp-category-list form-group col-lg-4 col-md-6 col-sm-12 col-xs-12">
          <div class="category-content">
            <h4>Ingeniør natur teknik</h4>
 
@@ -317,15 +203,15 @@ get_header(); ?>
 
   <!--   NEWS SECTION  -->
   <section class="container">
-    <div class="row top-offset-50">
+    <div class="top-offset-50">
         <div class="heading">
         <span class="overline"></span>
           <h1>De nyeste nyheder i jobview</h1>
       </div>
     </div>
-    <div class="container top-offset-30">
+    <div class="container">
 
-      <div class="row top-offset-30 col-lg-12">
+      <div class="row col-lg-12">
         <?php
 				$args = array( 'post_type' => 'post', 'posts_per_page' => -3 );
 				$the_query = new WP_Query( $args );
@@ -349,12 +235,12 @@ get_header(); ?>
   <section id="job-agent"  class="full-wrapper top-offset-50">
     <div id="overlay-jobagent">
       <div class="container">
-        <div class="row top-offset-50">
-          <div class="offset-md-2 col-md-4">
+        <div class="top-offset-50">
+          <div class="offset-md-1 offset-sm-1 col-md-6 col-lg-5">
             <div class="heading">
               <span class="overline"></span>
-                <h4 id="jw-jb-text" style="font-size: 34px; font-weight: 600; color: white;">Opret din job agent nu og få notifikation direkte på mobilen</h4>
-                <button class="jw-btn-primary-cta top-offset-15">Opret jobagent</button>
+                <h4 id="jw-jb-text" style="font-size: 30px; font-weight: 600; color: white;">Opret din job agent nu og få notifikation direkte på mobilen</h4>
+                <button type="button" data-toggle="modal" data-target="#myModal" class="jw-btn-primary-cta top-offset-15">Opret jobagent</button>
             </div>
           </div>
         </div>
@@ -362,56 +248,67 @@ get_header(); ?>
     </div><!--  row end -->
   </section><!-- job agent container END -->
 
-  <!--   FEATURED PARTNERS SECTION  -->
-<section id="content-1-6" class="container content-1-6 content-block">
+  <div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
 
-        <div class="row top-offset-50">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <div class="top-offset-50">
             <div class="heading">
             <span class="overline"></span>
-              <h1>De nyeste nyheder i jobview</h1>
+              <h1>Opret din jobagent</h1>
+          </div>
+      </div>
+      <div class="modal-body">
+        <p>Bruger</p>
+        <input type="text" name="område" value="" placeholder="E-mail">
+        <p>Søgekriterier</p>
+        <input type="text" name="område" value="" placeholder="Område">
+        <input type="text" name="område" value="" placeholder="Jobkategorier">
+        <input type="text" name="område" value="" placeholder="Søgeord">
+        <input type="text" name="område" value="" placeholder="Virksomhed">
+      </div>
+      <div class="modal-footer">
+        <label class="space-btw"><input value="" type="checkbox">Aktiver Jobagent for denne søgning Med Jobagenten får du tilsendt de nye job, der matcher din søgning - hver dag</label>
+        <label class="space-btw"><input value="" type="checkbox">Tilmed jobviews nyhedsbrev</label>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+  <!--   FEATURED PARTNERS SECTION  -->
+<section id="content-1-6" class="container content-1-6 content-block">
+        <div class="top-offset-50">
+            <div class="heading">
+            <span class="overline"></span>
+              <h1>Partners hos jobview</h1>
           </div>
         </div>
 
 			<div class="row client-row">
 				<div class="row-wrapper">
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<img alt="client" src="images/partner-logos/logo-bootstrap.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
+					<div class="col-md-2 col-sm-4 col-xs-6">
+            <?php
 
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<img alt="client" src="images/partner-logos/logo-less.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
+            $image = get_field('partners');
+            $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
 
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<img alt="client" src="images/partner-logos/logo-sass.png" data-selector="img" style="">
-					</div>
+            if( $image ) {
 
-					<div class="col-md-3 col-sm-6 col-xs-12">
-						<img alt="client" src="images/partner-logos/logo-jquery.png" data-selector="img" style="">
-					</div>
-				</div>
-			</div><!-- /.row -->
+            	echo wp_get_attachment_image( $image, $size );
 
-			<div class="row client-row">
-				<div class="row-wrapper">
-					<div class="col-md-3 hidden-sm hidden-xs">
-						<img alt="client" src="images/partner-logos/logo-grunt.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
+            }
 
-					<div class="col-md-3 hidden-sm hidden-xs">
-						<img alt="client" src="images/partner-logos/logo-bower.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
+            ?>
+          </div>
+        </div><!--  row end -->
+      </div><!-- featured partners container END -->
 
-					<div class="col-md-3 hidden-sm hidden-xs">
-						<img alt="client" src="images/partner-logos/logo-yeoman.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
 
-					<div class="col-md-3 hidden-sm hidden-xs">
-						<img alt="client" src="images/partner-logos/logo-angularjs.png" data-selector="img" style="outline: none; cursor: inherit;">
-					</div>
-				</div>
-    </div><!--  row end -->
-  </div><!-- featured partners container END -->
 </section>
 
 <script>

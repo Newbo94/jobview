@@ -18,9 +18,9 @@ jQuery(function() {
 
     return '\
       <div class="card swiper-slide" style="margin-right:20px;">\
-        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: auto;">\
+        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: 300px;">\
         <div class="card-block col-md-6" style="padding: 25px;">\
-          <div style="max-height: 175px; overflow: hidden; margin-bottom:10px;">\
+          <div style="height: 250px; overflow: hidden; margin-bottom:10px;">\
             <h4 class="card-title">HR-Skyen</h4>\
             <h4 class="card-sub-title">' + title + '</h4>\
             <p class="card-text"">' + shortdescription + '</p>\
