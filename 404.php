@@ -1,60 +1,41 @@
 <?php
 /**
- * The template for displaying 404 pages (not found)
+ * The template for displaying 404 pages (Not Found)
  *
- * @link https://codex.wordpress.org/Creating_an_Error_404_Page
- *
- * @package jobview
+ * @package WordPress
+ * @subpackage Twenty_Thirteen
+ * @since Twenty Thirteen 1.0
  */
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div id="primary" class="content-area container">
+		<div class="site-content row" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'jobview' ); ?></h1>
-				</header><!-- .page-header -->
+			<header class="page-header">
+				<h1 class="page-title"><?php _e( '404', 'Jobview' ); ?></h1>
+			</header>
 
+			<div class="page-wrapper">
 				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'jobview' ); ?></p>
 
-					<?php
-						get_search_form();
+					<h4><?php _e( 'Øv! noget gik galt.. Vend tilbage til forrige side eller kontakt support', 'jobview' ); ?></h4>
 
-						the_widget( 'WP_Widget_Recent_Posts' );
-					?>
+<div class="top-offset-30 d-flex justify-content-center call-btn">
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'jobview' ); ?></h2>
-						<ul>
-						<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-						?>
-						</ul>
-					</div><!-- .widget -->
+<button  class="btn-type1 btn-typ3" onclick="goBack()">Tilbage</button>
+<script>
+function goBack() {
+    window.history.back();
+}
+</script>
+<button  class="btn-type1" onclick="window.location.href='http://localhost:8888/jobview/wordpress/kontakt/ '">Kontakt</button>
 
-					<?php
-
-						/* translators: %1$s: smiley */
-						$archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'jobview' ), convert_smilies( ':)' ) ) . '</p>';
-						the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$archive_content" );
-
-						the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
-
+</div>
 				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+			</div><!-- .page-wrapper -->
 
-		</main><!-- #main -->
+		</div><!-- site-content -->
 	</div><!-- #primary -->
 
-<?php
-get_footer();
+<?php get_footer(); ?>

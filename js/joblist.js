@@ -17,19 +17,21 @@ jQuery(function() {
     var joburl = props.joblisturl;
 
     return '\
-      <div class="card">\
-        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 35px; border-radius: 200px; width:300px; height: auto;">\
-        <div class="card-block col-md-12" style="padding: 35px;">\
-          <h4 class="card-title">HR-Skyen</h4>\
-          <h4 class="card-sub-title">' + title + '</h4>\
-          <p class="card-text" style="min-height: 100px;overflow: hidden;">' + shortdescription + '</p>\
+      <div class="card swiper-slide" style="margin-right:20px;">\
+        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: auto;">\
+        <div class="card-block col-md-6" style="padding: 25px;">\
+          <div style="max-height: 175px; overflow: hidden; margin-bottom:10px;">\
+            <h4 class="card-title">HR-Skyen</h4>\
+            <h4 class="card-sub-title">' + title + '</h4>\
+            <p class="card-text"">' + shortdescription + '</p>\
+          </div>\
           <div id="jw-label-info" class="">\
             <div id="jw-label-info-text" style="padding: 0;">\
-              <p class="card-text"><small class="text-muted">Ansøgningsfrist: ' + deadline + '</small></p>\
-              <p class="card-text"><small class="text-muted">Job type: ' + jobTypes[0] + '</small></p>\
+              <p class="card-text" style="padding: 0; margin-bottom:0;"><small class="text-muted">Ansøgningsfrist: ' + deadline + '</small></p>\
+              <p class="card-text" style="padding: 0; margin-bottom:0;"><small class="text-muted">Job type: ' + jobTypes[0] + '</small></p>\
             </div>\
-            <div id="jw-label-info-button">\
-              <a href="'+joburl+'" class="btn jw-btn-primary">Se opslag</a>\
+            <div id="jw-label-info-button" style="margin-top:10px; width: 130px; line-height: 1.0;>\
+              <a href="'+joburl+'" class="btn jw-btn-primary" style="width: 130px; line-height: 1.0;">Se opslag</a>\
             </div>\
           </div>\
         </div>\

@@ -14,7 +14,7 @@
     if( !empty($image) ): ?>
         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
     <?php endif; ?>
-    
+
     <div class="container">
         <div class="row">
             <div class="col-lg-4">
@@ -27,7 +27,7 @@
                     </div><!--text center-->
                 </div><!--widget center-->
             </div><!--col-lg-4-->
-            
+
             <div class="col-lg-4">
                 <div class="widget center values">
                     <div class="blur"></div>
@@ -38,7 +38,7 @@
                     </div><!--text center-->
                 </div><!--widget center-->
             </div><!--col-lg-4-->
-            
+
             <div class="col-lg-4">
                 <div class="widget center vision">
                     <div class="blur"></div>
@@ -63,9 +63,9 @@
                 <div class="col-lg-6 d-flex align-items-center">
                     <?php the_post_thumbnail(); ?>
                 </div><!--col-md-6-->
-                
+
                 <div class="col-lg-6 about-section-txt">
-                    <hr class="contact-hr">
+                    <span class="overline"></span>
                     <h1><?php the_title(); ?></h1>
                     <?php the_content(); ?>
                 </div><!--col-md-6-->
@@ -82,12 +82,12 @@
     if( !empty($image) ): ?>
         <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
     <?php endif; ?>
-    
+
     <div class="container">
         <div class="jobsection-opslag">
-            <hr class="contact-hr">
+            <span class="overline"></span>
             <h2>Bliv en del af vores team</h2>
-            
+
             <div class="container">
                 <div class="row">
                     <div class="col-lg-9 jobsection-opslag-single">
@@ -101,17 +101,17 @@
 
                             <div class="col-md-8 tekst-opslag-single">
                                 <h3>Systemudvikler til jobportalen jobview</h3>
-                                
+
                                 <p>For ARTOGIS a/s søger vi en alsidig IT-systemudvikler, til udvikling af brugervenlige og kvalitetsbetonede For ARTOGIS a/s søger vi en alsidig IT-systemudvikler, til udvikling af brugervenlige og kvalitetsbetonede (…)</p>
-                                
+
                                 <p class="opslag-single-info"><strong>Ansøgningsfrit:</strong> 29/12-2017<br>
                                 <strong>Jobtype:</strong> Fuldtid</p>
-                                
+
                                 <button class="jw-btn-primary">Se opslag</button>
                             </div><!--col-lg-7-->
                         </div><!--row-->
                     </div><!--jobsection-opslag-single-->
-                    
+
                     <div class="col-lg-9 jobsection-opslag-single">
                         <div class="row">
                             <div class="col-md-4">
@@ -123,17 +123,17 @@
 
                             <div class="col-md-8 tekst-opslag-single">
                                 <h3>Systemudvikler til jobportalen jobview</h3>
-                                
+
                                 <p>For ARTOGIS a/s søger vi en alsidig IT-systemudvikler, til udvikling af brugervenlige og kvalitetsbetonede For ARTOGIS a/s søger vi en alsidig IT-systemudvikler, til udvikling af brugervenlige og kvalitetsbetonede (…)</p>
-                                
+
                                 <p class="opslag-single-info"><strong>Ansøgningsfrit:</strong> 29/12-2017<br>
                                 <strong>Jobtype:</strong> Fuldtid</p>
-                                
+
                                 <button class="jw-btn-primary">Se opslag</button>
                             </div><!--col-lg-7-->
                         </div><!--row-->
                     </div><!--jobsection-opslag-single-->
-            
+
                     <div class="col-lg-9 padding-0-btn">
                         <button class="uopfordret-btn">Søg uopfordret</button>
                     </div><!--col-lg-9-->
@@ -147,9 +147,9 @@
 
 <!-- Presseoplæg sektion -->
 <div class="container press-section">
-    <hr class="contact-hr">
+    <span class="overline"></span>
     <h2>Seneste presseoplæg</h2>
-    
+
     <?php $args = array( 'post_type' => 'presse', 'posts_per_page' => 3 );
     $the_query = new WP_Query( $args ); ?>
     <?php if ( $the_query->have_posts() ) : ?>
@@ -158,15 +158,15 @@
                 <div class="col-xl-2 col-md-3 col-4">
                     <?php the_post_thumbnail(); ?>
                 </div><!--col-md-2-->
-                
+
                 <div class="col-xl-10 col-md-9 col-8 d-flex align-items-center">
                     <h3><a href="<?php the_field('press_links'); ?>"><?php the_title(); ?></a></h3>
                 </div><!--col-md-10-->
             </div><!--row-->
             <?php wp_reset_postdata(); ?>
         <?php endwhile; ?>
-    <?php endif; ?>   
-    
+    <?php endif; ?>
+
     <h3><a href="<?php echo get_page_link(215); ?>">Se flere</a></h3>
 </div><!--container-->
 
