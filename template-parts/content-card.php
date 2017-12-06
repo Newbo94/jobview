@@ -14,6 +14,10 @@
 
   <div class="article-card" id="article-card">
     <header class="entry-header">
+      <div class="header-img-con">
+        <div class="header-img-overlay">
+
+        </div>
       <div class="header-img">
         <?php
 
@@ -31,6 +35,9 @@
 
         ?>
       </div>
+
+</div>
+
       <div class="ps-absoult meta-data">
         <div class="meta-data-text">
           <div class="author-meta">

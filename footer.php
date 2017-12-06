@@ -60,9 +60,16 @@ dynamic_sidebar('footer-sidebar-4');
 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
+
+	<div class="d-flex justify-content-center social-media-icons">
+		<a href="https://www.facebook.com/jobview/?ref=br_rs" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();  ?>/icons/facebook-icon.svg" alt="facebook-icon"></a>
+		<a href="https://www.linkedin.com/company/jobview/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri();  ?>/icons/linkedin-icon.svg" alt="Linkedin-icon"></a>
+
+
+	</div>
 <div class="site-end d-flex justify-content-center">
 	<p>
-		&copy; <?php echo date('Y'); ?> Jobview.dk 
+		&copy; <?php echo date('Y'); ?> Jobview.dk
 	</p>
 </div>
 

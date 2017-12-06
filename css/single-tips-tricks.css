@@ -401,3 +401,19 @@ height: auto;
         box-shadow: none;
 border-bottom: none !important;
 }
+
+.header-img-overlay {
+position: absolute;
+background-color: rgba(135, 205, 185, 0.3);
+height: 300px;
+width: 100%;
+z-index: 1;
+}
+
+.header-img {
+  position: relative;
+}
+
+.article-card .meta-data {
+  z-index: 10;
+}

@@ -18,7 +18,7 @@
 </div>
 <div class="row">
     <?php
-    $args = array( 'post_type' => 'FAQ', 'posts_per_page' => 10 );
+    $args = array( 'post_type' => 'FAQ', 'posts_per_page' => -1 );
     $the_query = new WP_Query( $args );
     ?>
     <?php if ( $the_query->have_posts() ) : ?>

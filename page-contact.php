@@ -20,24 +20,21 @@
             </div><!--col-md-6-->
 
             <script>
-                
-                
+
+
                 function initMap() {
                     var jobview = {lat: 55.4004262, lng: 10.38916370000004};
-                    
+
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 16,
                         center: jobview
                     });
-<<<<<<< HEAD
 
-=======
-                    
                     var logoIcon = {
-                        url: '../wp-content/themes/jobview/icons/logo_icon.svg'
+                        url: '../wp-content/themes/jobview-template/icons/logo_icon.svg'
                     };
-                    
->>>>>>> 77ba8e09ef487a8513f8737d5d9ce3e9c764235f
+
+
                     var marker = new google.maps.Marker({
                         position: jobview,
                         icon: logoIcon,
@@ -99,6 +96,7 @@
         <?php
         $the_query = new WP_Query( array(
     'post_type' => 'FAQ',
+    'posts_per_page' => 8,
     'tax_query' => array(
         array (
             'taxonomy' => 'FAQ-cat',

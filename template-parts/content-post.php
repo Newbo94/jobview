@@ -13,6 +13,9 @@
 <article  class="col-lg-4 top-offset-30 " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="article-card" id="article-card">
     <header class="entry-header">
+      <div class="header-img-overlay">
+
+      </div>
       <div class="header-img">
         <?php
         // Must be inside a loop.
