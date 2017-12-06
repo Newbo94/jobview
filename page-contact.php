@@ -20,15 +20,27 @@
             </div><!--col-md-6-->
 
             <script>
+                
+                
                 function initMap() {
-                    var jobview = {lat: 55.4003356, lng: 10.386947};
+                    var jobview = {lat: 55.4004262, lng: 10.38916370000004};
+                    
                     var map = new google.maps.Map(document.getElementById('map'), {
                         zoom: 16,
                         center: jobview
                     });
+<<<<<<< HEAD
 
+=======
+                    
+                    var logoIcon = {
+                        url: '../wp-content/themes/jobview/icons/logo_icon.svg'
+                    };
+                    
+>>>>>>> 77ba8e09ef487a8513f8737d5d9ce3e9c764235f
                     var marker = new google.maps.Marker({
                         position: jobview,
+                        icon: logoIcon,
                         map: map
                     });
                 }
