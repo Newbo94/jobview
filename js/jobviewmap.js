@@ -29,8 +29,6 @@ jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
         title: val.title,
         shortdescription: val.shortdescription,
         imageurl: val.frontimage
-
-
       }
       features.push(new_array); //pusher alt til nyt array features
       }
