@@ -36,7 +36,7 @@
             </div>
           </div>
 
-        <div class="feature-single-info bg-softblue top-offset-30" >
+        <div class="feature-single-info top-offset-30" >
           <div class="feature-heading">
             <span></span>
             <h5> <?php the_field('q-heading') ?></h5>
@@ -54,28 +54,7 @@
 </div>
 </div>
 
-<script type="text/javascript">
 
-jQuery(document).ready(function( $ ) {
-
-  $(".feature-single").toggle(
-    function () {
-      $(this).addClass("hovered");
-    },
-    function () {
-      $(this).removeClass("hovered");
-    }
-  );
-
-
-
-
-
-});
-
-
-
-</script>
 
 
 

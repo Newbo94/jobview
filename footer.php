@@ -62,7 +62,7 @@ dynamic_sidebar('footer-sidebar-4');
 	</footer><!-- #colophon -->
 <div class="site-end d-flex justify-content-center">
 	<p>
-		&copy; <?php echo date('Y'); ?> Jobview.dk - CVR: 25993888
+		&copy; <?php echo date('Y'); ?> Jobview.dk 
 	</p>
 </div>
 
