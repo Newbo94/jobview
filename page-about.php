@@ -167,7 +167,7 @@
         <?php endwhile; ?>
     <?php endif; ?>   
     
-    <h3><a href="">Se flere</a></h3>
+    <h3><a href="<?php echo get_page_link(215); ?>">Se flere</a></h3>
 </div><!--container-->
 
 
