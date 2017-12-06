@@ -2,7 +2,7 @@
 
 jQuery(document).ready(function( $ ) {
 
-var row=$('.row');
+var row=$('.row-post');
 $.each(row, function() {
     var maxh=0;
     $.each($(this).find('.entry-content'), function() {

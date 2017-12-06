@@ -211,7 +211,7 @@ get_header(); ?>
     </div>
     <div class="container">
 
-      <div class="row col-lg-12">
+      <div class="row  row-post">
         <?php
 				$args = array( 'post_type' => 'post', 'posts_per_page' => -3 );
 				$the_query = new WP_Query( $args );
@@ -290,21 +290,107 @@ get_header(); ?>
         </div>
 
 			<div class="row client-row">
-				<div class="row-wrapper">
-					<div class="col-md-2 col-sm-4 col-xs-6">
+				<div class="row">
+					<div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
             <?php
 
-            $image = get_field('partners');
-            $size = 'thumbnail'; // (thumbnail, medium, large, full or custom size)
+    $image = get_field('partner_logo_1');
 
-            if( $image ) {
+    if( !empty($image) ): ?>
 
-            	echo wp_get_attachment_image( $image, $size );
+    	<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-            }
+    <?php endif; ?>
 
-            ?>
           </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_2');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30" >
+            <?php
+
+    $image = get_field('partner_logo_3');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_4');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_5');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_6');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_7');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+          <div class="col-md-3 col-sm-4 col-xs-6 d-flex justify-content-center top-offset-30">
+            <?php
+
+    $image = get_field('partner_logo_8');
+
+    if( !empty($image) ): ?>
+
+      <img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+    <?php endif; ?>
+
+          </div>
+
+
+
+
         </div><!--  row end -->
       </div><!-- featured partners container END -->
 

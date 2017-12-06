@@ -15,7 +15,7 @@
 
 
 .news-bg {
-  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php bloginfo('template_directory'); ?>/image/newsletter-bg.jpg");
+  background-image: linear-gradient(135deg, rgba(40,135,145,0.5) 0%,rgba(15,65,85,0.5) 99%), url("<?php echo esc_url( get_template_directory_uri() ); ?>/image/newsletter-bg.jpg");
 }
 
 
@@ -210,7 +210,7 @@
 
 
 <div class="container-fluid news-bg">
-  <div class="row">
+  <div class="row"  style="padding: 50px 0px;">
     <div class="col-lg-12">
       <?php if ( have_posts() ) : ?>
       	<?php while ( have_posts() ) : the_post(); ?>

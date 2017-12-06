@@ -288,6 +288,9 @@ opacity: 0.5;
   margin: 10px;
 }
 
+
+
+
 @media screen and (max-width: 933px){
   #footer-sidebar1 {
         border:none;
@@ -391,4 +394,14 @@ background-color: #FCB123;
         -ms-flex-align: center;
             align-items: center;
   }
+}
+
+
+
+.client-row img {
+  height: 50px;
+}
+
+.client-row {
+  margin-bottom: 100px;
 }
