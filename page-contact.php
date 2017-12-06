@@ -29,11 +29,15 @@
                         zoom: 16,
                         center: jobview
                     });
+<<<<<<< HEAD
+
+=======
                     
                     var logoIcon = {
                         url: '../wp-content/themes/jobview/icons/logo_icon.svg'
                     };
                     
+>>>>>>> 77ba8e09ef487a8513f8737d5d9ce3e9c764235f
                     var marker = new google.maps.Marker({
                         position: jobview,
                         icon: logoIcon,
@@ -41,10 +45,10 @@
                     });
                 }
             </script>
-            
+
             <script async defer
             src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"></script>
-           
+
             <div class="col-lg-6 d-flex align-items-center">
                 <div class="contactsupport">
                     <div class="row kundesupport">
@@ -137,28 +141,8 @@
 </div><!--container-->
 
 
-<script type="text/javascript">
-
-jQuery(document).ready(function( $ ) {
-
-  $(".feature-single").toggle(
-    function () {
-      $(this).addClass("hovered");
-    },
-    function () {
-      $(this).removeClass("hovered");
-    }
-  );
 
 
-
-
-
-});
-
-
-
-</script>
 
 
 <?php get_footer(); ?>

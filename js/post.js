@@ -20,6 +20,17 @@ $("#navbar-toggler").click(function(){
   });
 
 
+    $(".feature-single").hover(
+      function () {
+        $(this).addClass("hovered");
+      },
+      function () {
+        $(this).removeClass("hovered") ;
+      }
+    );
+
+
+
 
 
 

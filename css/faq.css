@@ -39,11 +39,14 @@
 }
 
 
+
 .feature-single .thumbnail img {
   border-radius: 50%;
-width: 250px;
-height: 250px;
+width: 230px;
+height: 230px;
 }
+
+
 
 .heading {
   display: -webkit-box;
@@ -64,15 +67,27 @@ height: 250px;
 
 }
 
-.feature-single {
+.hovered .thumbnail  {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+          -webkit-transition: 0.7s ease;
+                transition: 0.7s ease;
+}
+
+.hovered {
   -webkit-transition: 0.7s ease;
         transition: 0.7s ease;
 
 
 }
 
+
+
+
 .hovered .feature-single-info  {
     display: block;
+    -webkit-transition: 0.7s ease;
+          transition: 0.7s ease;
 
 }
 
@@ -80,4 +95,8 @@ height: 250px;
   display: none;
   -webkit-transition: 0.7s ease;
         transition: 0.7s ease;
+}
+
+#faq-con {
+  margin-bottom: 200px;
 }

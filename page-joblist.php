@@ -8,6 +8,10 @@
 
 <?php get_header(); ?>
 
+
+
+
+
 <div class="container" style="margin-top: 50px;">
 
   <div class="row">
@@ -15,20 +19,29 @@
     <div id="filter-sidebar" class="col-xs-6 col-sm-10 col-md-10 col-lg-3 visible-xs-block hidden-xs sliding-sidebar">
       <div id="jw-filters" style="background-color:#ffffff;" class="filters">
         <div class="filter-block">
-          <h4>
-        Filtrer din søgning<span></span></h4>
-          <input id="filter-search" placeholder="Search" type="text">
+          <h2>
+        Filtrer din søgning<span></span></h2>
+          <input id="filter-search" placeholder="Søg" type="text">
         </div>
         <div class="filter-block">
           <h4 data-toggle="collapse" data-target="#jw-filter-group-1">
         Job types <span class="toggle-masks"></span></h4>
           <div id="jw-filter-group-1" class="list-group collapse in filter-block">
-            <label class="space-btw">Fuld tid<input class="filter-job" value="Fuldtid" type="checkbox"></label>
+            <label class="space-btw">Fuldtid<input class="filter-job" value="Fuldtid" type="checkbox">
+
+            </label>
             <label class="space-btw">Deltid<input class="filter-job" value="Deltid" type="checkbox"></label>
             <label class="space-btw">Studiejob<input class="filter-job" value="Studiejob" type="checkbox"></label>
             <label class="space-btw">Fleksjob<input class="filter-job" value="Fleksjob" type="checkbox"></label>
           </div>
         </div>
+
+
+
+
+
+
+
         <div class="filter-block">
           <h4 data-toggle="collapse" data-target="#jw-filter-group-2">
         Afstand<span class="toggle-masks"></span></h4>
@@ -113,7 +126,7 @@ jQuery(function() {
     var joburl = props.joblisturl;
 
     return '\
-      <div class="card swiper-slide" style="margin-right:20px;">\
+      <div class="card swiper-slide" style="margin-right:20px; margin-bottom:30px;">\
         <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: auto;">\
         <div class="card-block col-md-6" style="padding: 25px;">\
           <div style="max-height: 175px; overflow: hidden; margin-bottom:10px;">\
