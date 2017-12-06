@@ -1,74 +1,62 @@
+var map;
+//Via brugerens lokation bliver mappet defineret og markers loaded
+if (navigator.geolocation) {
+     navigator.geolocation.getCurrentPosition(function (position) {
+         initialLocation = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+         map.setCenter(initialLocation);
+         map.setZoom(12)
+     });
+ }
 
-var jobviewmap, infoWindow;
-      function initMap() {
-        map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: 50, lng: 13},
-          zoom: 13
-        });
-
-
-infoWindow = new google.maps.InfoWindow;
-
-        // HTML5 geolocation.
-        if (navigator.geolocation) {
-          navigator.geolocation.getCurrentPosition(function(position) {
-            var pos = {
-              lat: position.coords.latitude,
-              lng: position.coords.longitude
-            };
-
-            infoWindow.setPosition(pos);
-            map.setCenter(pos);
-          }, function() {
-            handleLocationError(true, infoWindow, map.getCenter());
-          });
-        } else {
-          // Browser doesn't support Geolocation
-          handleLocationError(false, infoWindow, map.getCenter());
-        }
-      }
-
-      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-        infoWindow.setPosition(pos);
-        infoWindow.setContent(browserHasGeolocation ?
-                              'Error: The Geolocation service failed.' :
-                              'Error: Your browser doesn\'t support geolocation.');
-        infoWindow.open(map);
-      }
-
-      var icon = "http://chart.apis.google.com/chart?cht=mm&chs=24x32&chco=";
-      var infowindow = new google.maps.InfoWindow();
-
-//LOADING JSON FILE START//
-    var jobslist = "http://hr-skyen.dk/hr/api/jobs/testvirksomhed";
-    console.log(jobslist);
-
-    jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(jobs) {
-
-    jQuery.each(jobs.jobpost, function (key, data) {
-
-        var location = new google.maps.LatLng(jobs.latitude,jobs.longitude);
-
-        var marker = new google.maps.Marker({
-            position: location,
-            map: map,
-            icon: icon,
-            title: jobs.title
-        });
-
-        var details = data.shortdescription + ", " + data.contacts + ".";
-
-        bindInfoWindow(marker, map, infowindow, details);
-
-        });
-
-    });
-
-function bindInfoWindow(marker, map, infowindow, strDescription) {
-    google.maps.event.addListener(marker, 'click', function () {
-        infowindow.setContent(strDescription);
-        infowindow.open(map, marker);
-    });
+function initMap() {
+  map = new google.maps.Map(document.getElementById('map'), {
+    zoom: 8,
+    center: new google.maps.LatLng(50, 13)
+  });
 }
 
-google.maps.event.addDomListener(window, 'load', initialize);
+
+var features = [];
+
+//indlæs JSON filen
+jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
+//Laver each loop som looper gennem hvert object i JSON filen
+  jQuery.each(json, function(i, val) {
+    if (val.locations.length > 0) {
+      var new_array = { //finder de foskellige values og opretter nyt array
+        position: new google.maps.LatLng(val.locations[0].latitude, val.locations[0].longitude),
+        title: val.title,
+        shortdescription: val.shortdescription,
+        imageurl: val.frontimage
+
+
+      }
+      features.push(new_array); //pusher alt til nyt array features
+      }
+  });
+//laver en forEach funktion af arrayet features, der opretter nye markers på mappet med de udvalgte punkter fra JSON feeded
+  features.forEach(function(feature, index) {
+    var title = features[index].title;
+    var shortdescription = features[index].shortdescription;
+    var imageurl = features[index].imageurl;
+
+    var contentString =
+    '<img src="'+ imageurl +'"></img><div class="info"><h3>' + title +'</h3><div class="info-body">'+ shortdescription +'</div></div>';
+
+    var infowindow = new google.maps.InfoWindow({
+       content: contentString
+    });
+
+    var marker = new google.maps.Marker({
+        position: feature.position,
+        map: map
+
+    });
+
+    marker.addListener('click', function() {
+    infowindow.open(map, marker);
+    });
+
+  });
+
+});
