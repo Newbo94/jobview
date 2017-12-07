@@ -28,7 +28,10 @@ jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
         position: new google.maps.LatLng(val.locations[0].latitude, val.locations[0].longitude),
         title: val.title,
         shortdescription: val.shortdescription,
-        imageurl: val.frontimage
+        imageurl: val.frontimage,
+        applyform: val.applyform,
+        applydate: val.applybefore
+
       }
       features.push(new_array); //pusher alt til nyt array features
       }
@@ -38,12 +41,38 @@ jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
     var title = features[index].title;
     var shortdescription = features[index].shortdescription;
     var imageurl = features[index].imageurl;
+    var joburl = features[index].applyform;
+    var applydate = features[index].applydate;
+
 
     var contentString =
-    '<img src="'+ imageurl +' "style="width:300px; height:300px; object-fit:cover;" ></img><div class="info"><h3>' + title +'</h3><div class="info-body">'+ shortdescription +'</div></div>';
+    '\
+      <div class="card swiper-slide" style="margin-right:20px;">\
+        <img class="card-img center-image" src="' + imageurl + '" alt="Job image" style="padding: 15px; border-radius: 200px; width:260px; height:260px; object-fit:cover;">\
+        <div class="card-block col-md-7" style="padding: 15px;">\
+          <div style="height: 200px; overflow: hidden; margin-bottom:10px;">\
+            <h4 class="card-title">HR-Skyen</h4>\
+            <h4 class="card-sub-title">' + title + '</h4>\
+            <p class="card-text" style="height: 85px; overflow:hidden;">' + shortdescription + '</p>\
+            <div id="jw-label-info" class="">\
+              <div id="jw-label-info-text" style="padding: 0;">\
+                <p class="card-text" style="padding: 0; margin-bottom:0;"><small class="text-muted">Ansøgningsfrist: ' + applydate + '</small></p>\
+                <p class="card-text" style="padding: 0; margin-bottom:0;"><small class="text-muted">Jobtype: Fuldtid </small></p>\
+              </div>\
+              <div id="jw-label-info-button" style="margin-top:10px; width: 130px; line-height: 1.0;">\
+                <button class="btn jw-btn-primary" style="width: 130px; line-height: 1.0; color: white;"><a href='+joburl+' Se opslag</a></button\
+              </div>\
+            </div>\
+          </div>\
+        </div>\
+      </div>\
+    '
 
     var infowindow = new google.maps.InfoWindow({
-       content: contentString
+       content: contentString,
+       maxWidth: 800,
+       minHeight: 400
+
     });
 
     var jobviewIcon = {
@@ -62,6 +91,8 @@ jQuery.getJSON('http://hr-skyen.dk/hr/api/jobs/testvirksomhed', function(json) {
         map: map
 
     });
+
+
 
     marker.addListener('click', function() {
     infowindow.open(map, marker);
