@@ -1,4 +1,4 @@
-jQuery(function() {
+jQuery(function($) {
   var url = 'http://hr-skyen.dk/hr/api/jobs/testvirksomhed?locale=da_DK';
   var jobs = [];
   var search = '';
@@ -43,7 +43,7 @@ jQuery(function() {
 
   // Clears container and re-renders jobs
   var renderJobs = function() {
-    jQuery('.job-post-container').html('');
+    $('.job-post-container').html('');
 
     jobs = jobs.map(function(job) {
       for(var i = 0; i < filters.length; i++) {
@@ -66,16 +66,16 @@ jQuery(function() {
     })
 
     if (!activeJobs.length) {
-      jQuery('.job-post-container').html('Der er ingen aktive job.');
+      $('.job-post-container').html('Der er ingen aktive job.');
     }
 
     activeJobs.forEach(function(job) {
-      jQuery('.job-post-container').append(createJob(job));
+      $('.job-post-container').append(createJob(job));
     });
   }
 
   // Retrieve jobs and render them
-  jQuery.get(url, function(res) {
+  $.get(url, function(res) {
     jobs = Object.keys(res).map(function(id) {
       return {
         active: true,
@@ -91,7 +91,7 @@ jQuery(function() {
   });
 
   // Handle search
-  jQuery('#filter-search').on('keyup', function(e) {
+  $('#filter-search').on('keyup', function(e) {
     search = e.target.value;
 
     // Search in description and title
@@ -104,7 +104,7 @@ jQuery(function() {
   });
 
   // Handle job type filtering
-  jQuery('.filter-job').on('change', function(e) {
+  $('.filter-job').on('change', function(e) {
     var filter = e.target.value;
 
     if (this.checked) {
@@ -123,15 +123,15 @@ jQuery(function() {
     renderJobs();
   });
 
-  jQuery("#slider-range").slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [0, 500],
-    slide: function(event, ui) {
-      jQuery("#amount").val(ui.values[0] + "km" + " - " + ui.values[1] + "km");
-    }
-  });
-  jQuery("#amount").val(jQuery("#slider-range").slider("values", 0) + "km" + " - " +
-    jQuery("#slider-range").slider("values", 1) + "km");
+  // jQuery("#slider-range").slider({
+  //   range: true,
+  //   min: 0,
+  //   max: 500,
+  //   values: [0, 500],
+  //   slide: function(event, ui) {
+  //     jQuery("#amount").val(ui.values[0] + "km" + " - " + ui.values[1] + "km");
+  //   }
+  // });
+  // jQuery("#amount").val(jQuery("#slider-range").slider("values", 0) + "km" + " - " +
+  //   jQuery("#slider-range").slider("values", 1) + "km");
 });

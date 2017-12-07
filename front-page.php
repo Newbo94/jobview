@@ -45,11 +45,11 @@ get_header(); ?>
         position: relative;
     }
 
-    #job-agent{
+    .full-wrapper {
       background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
       -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
       linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
-      url("<?php echo get_template_directory_uri(); ?>/image/categorylist.png");
+      url("<?php echo get_template_directory_uri(); ?>/image/jobagent-bg.png");
       -webkit-background-size: cover;
       -moz-background-size: cover;
       -o-background-size: cover;
@@ -59,16 +59,19 @@ get_header(); ?>
       position: relative;
     }
     </style>
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.css">
 
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
     async defer></script>
 
   <!--   <script src="https://maps.googleapis.com/maps/api/js"></script> -->
+      <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.min.css">
     <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/joblist.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>
+
+
+
 
  </head>
 <!--   MAP SECTION  -->
@@ -95,18 +98,76 @@ get_header(); ?>
 
 
  <!--   JOB POST SLIDER SECTION  -->
-<section class="container">
-   <div class="row">
-     <div id="jw-job-post-list" class="col-xs-12 col-sm-12 col-md-12 col-lg-12 top-offset-50">
-       <div class="job-list swiper-container">
-         <div class="col-lg-offset-1 col-lg-10 swiper-wrapper job-post-container">
+ <div class="container">
+  <div class="row top-offset-50">
+
+        <div class="heading">
+        <span class="overline"></span>
+          <h2>Her er nogle job forslag kun til dig</h2>
+      </div>
+      </div>
+      </div>
+
+      <div class="swiper-container top-offset-50">
+         <div class="swiper-wrapper job-post-container">
+
          </div>
-         <!--<div class="swiper-button-next"></div>
-         <div class="swiper-button-prev"></div>-->
+         <!-- Add Pagination -->
+         <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
        </div>
-     </div>
-     </div><!--  row end -->
- </section><!-- job-list container END -->
+
+
+
+ <style>
+ }
+    .swiper-container {
+      width: 100%;
+      height: 100%;
+      padding-top: 30px;
+    }
+    .swiper-slide {
+
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      width: 60%;
+
+ }
+
+      .swiper-slide:first-child {
+       margin-left: 10%;
+     }
+
+
+
+  </style>
+
+  <script>
+    var swiper = new Swiper('.swiper-container', {
+      slidesPerView: 'auto',
+      speed: 400,
+      centeredSlides: true,
+      spaceBetween: 30,
+      navigation: {
+       nextEl: '.swiper-button-next',
+       prevEl: '.swiper-button-prev',
+     }
+
+    });
+  </script>
 
  <!--   CATEGORY LIST SECTION  -->
  <section id="category-list" class="container-fluid" >
@@ -231,54 +292,68 @@ get_header(); ?>
     </div><!--  row end -->
   </section><!-- news container END -->
 
-  <!--   JOB AGENT SECTION  -->
-  <section id="job-agent"  class="full-wrapper top-offset-50">
-    <div id="overlay-jobagent">
-      <div class="container">
-        <div class="top-offset-50">
-          <div class="offset-md-1 offset-sm-1 col-md-6 col-lg-5">
-            <div class="heading">
-              <span class="overline"></span>
-                <h4 id="jw-jb-text" style="font-size: 30px; font-weight: 600; color: white;">Opret din job agent nu og få notifikation direkte på mobilen</h4>
-                <button type="button" data-toggle="modal" data-target="#myModal" class="jw-btn-primary-cta top-offset-15">Opret jobagent</button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div><!--  row end -->
-  </section><!-- job agent container END -->
 
-  <div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
 
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <div class="top-offset-50">
-            <div class="heading">
-            <span class="overline"></span>
-              <h1>Opret din jobagent</h1>
-          </div>
-      </div>
-      <div class="modal-body">
-        <p>Bruger</p>
-        <input type="text" name="område" value="" placeholder="E-mail">
-        <p>Søgekriterier</p>
-        <input type="text" name="område" value="" placeholder="Område">
-        <input type="text" name="område" value="" placeholder="Jobkategorier">
-        <input type="text" name="område" value="" placeholder="Søgeord">
-        <input type="text" name="område" value="" placeholder="Virksomhed">
-      </div>
-      <div class="modal-footer">
-        <label class="space-btw"><input value="" type="checkbox">Aktiver Jobagent for denne søgning Med Jobagenten får du tilsendt de nye job, der matcher din søgning - hver dag</label>
-        <label class="space-btw"><input value="" type="checkbox">Tilmed jobviews nyhedsbrev</label>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
+
+
+<div class="full-wrapper d-flex align-items-center top-offset-50">
+<div class="container ">
+  <div class="row">
+    <div class="col-lg-4">
+      <div class="heading">
+      <span class="overline"></span>
+        <h2>Opret din job agent
+nu og få notifikation direkte på mobilen</h2>
+    </div>
+
+      <button class="jw-btn-primary-cta" id="myBtn">Open Modal</button>
     </div>
   </div>
 </div>
-</div>
+</div> <!-- fullwrapper -->
+
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal ">
+    <!-- Modal content -->
+    <div class="container">
+    <div class="modal-content row">
+      <div class="col-lg-9">
+        <div class="heading">
+        <span class="overline"></span>
+          <h2>Opret din jobagent</h2>
+            <span class="close">&times;</span>
+
+          <h3>Bruger</h3>
+          <input type="email" placeholder="E-mail" required>
+          <h3>Søgeparemetere</h3>
+          <input type="text" placeholder="Område">
+          <input type="text" placeholder="Jobkategorier">
+          <input type="text" placeholder="Søgeord">
+          <input type="text" placeholder="Virksomhed">
+
+          <input type="checkbox"> <span><p>
+            Aktiver Jobagent for denne søgning
+Med Jobagenten får du tilsendt de nye job, der matcher din søgning - hver dag
+          </p></span>
+
+          <input type="checkbox"> <span><p>
+        Tilmed jobviews nyhedsbrev
+          </p></span>
+
+          <button class="jw-btn-primary-cta close">Gem jobagent</button>
+
+
+      </div>
+    </div> <!-- col-lg-9 -->
+    </div> <!-- modal-content -->
+  </div> <!-- container -->
+  </div> <!-- #myModal -->
+
+
+
+
+
 
   <!--   FEATURED PARTNERS SECTION  -->
 <section id="content-1-6" class="container content-1-6 content-block">
