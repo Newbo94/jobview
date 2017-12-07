@@ -417,3 +417,10 @@ z-index: 1;
 .article-card .meta-data {
   z-index: 10;
 }
+
+/* Front page */
+
+.home .article-card .entry-title {
+  color: #3A3A3A;
+      font-weight: 600;
+}

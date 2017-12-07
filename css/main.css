@@ -58,6 +58,38 @@ color: #3A3A3A;
 }
 
 
+.top-offset-100 {
+
+  margin-top: 100px;
+
+}
+
+
+.top-padding-15 {
+  padding-top: 15px;
+}
+
+.top-padding-30 {
+  padding-top: 30px
+}
+
+.top-padding-40 {
+  padding-top: 40px
+}
+
+.top-padding-50 {
+
+  padding-top: 50px;
+
+}
+
+.top-padding-100 {
+
+  padding-top: 100px;
+
+}
+
+
 
 /* Buttons */
 

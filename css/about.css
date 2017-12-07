@@ -121,6 +121,8 @@
     width: 230px;
     position: inherit;
     margin: 30px;
+
+    border-radius: 200px;
 }
 
 .tekst-opslag-single {

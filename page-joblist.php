@@ -16,7 +16,7 @@
 
   <div class="row">
     <!-- filter sidebar -->
-    <div id="filter-sidebar" class="col-xs-6 col-sm-10 col-md-10 col-lg-3 visible-xs-block hidden-xs sliding-sidebar">
+    <div id="filter-sidebar" class="col-xs-12 col-sm-12 col-md-10 col-lg-4 visible-xs-block hidden-xs sliding-sidebar">
       <div id="jw-filters" style="background-color:#ffffff;" class="filters">
         <div class="filter-block">
           <h2>
@@ -35,13 +35,6 @@
             <label class="space-btw">Fleksjob<input class="filter-job" value="Fleksjob" type="checkbox"></label>
           </div>
         </div>
-
-
-
-
-
-
-
         <div class="filter-block">
           <h4 data-toggle="collapse" data-target="#jw-filter-group-2">
         Afstand<span class="toggle-masks"></span></h4>
@@ -95,10 +88,9 @@
 
 
     <!-- job-list container -->
-    <div id="jw-job-post-list" class="col-xs-12 col-sm-10 col-md-10 col-lg-9">
+    <div id="jw-job-post-list" class="col-lg-8">
       <div class="job-list">
-
-        <div class="col-md-12 job-post-container">
+        <div class="job-post-container">
         </div>
       </div>
     </div>
@@ -127,7 +119,7 @@ jQuery(function() {
 
     return '\
       <div class="card swiper-slide" style="margin-right:20px; margin-bottom:30px;">\
-        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: auto;">\
+        <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: 300px;">\
         <div class="card-block col-md-6" style="padding: 25px;">\
           <div style="max-height: 175px; overflow: hidden; margin-bottom:10px;">\
             <h4 class="card-title">HR-Skyen</h4>\
@@ -232,17 +224,17 @@ jQuery(function() {
     renderJobs();
   });
 
-  jQuery("#slider-range").slider({
-    range: true,
-    min: 0,
-    max: 500,
-    values: [0, 500],
-    slide: function(event, ui) {
-      jQuery("#amount").val(ui.values[0] + "km" + " - " + ui.values[1] + "km");
-    }
-  });
-  jQuery("#amount").val(jQuery("#slider-range").slider("values", 0) + "km" + " - " +
-    jQuery("#slider-range").slider("values", 1) + "km");
+  // jQuery("#slider-range").slider({
+  //   range: true,
+  //   min: 0,
+  //   max: 500,
+  //   values: [0, 500],
+  //   slide: function(event, ui) {
+  //     jQuery("#amount").val(ui.values[0] + "km" + " - " + ui.values[1] + "km");
+  //   }
+  // });
+  // jQuery("#amount").val(jQuery("#slider-range").slider("values", 0) + "km" + " - " +
+  //   jQuery("#slider-range").slider("values", 1) + "km");
 });
 </script>
 
