@@ -362,7 +362,9 @@ register_sidebar( array(
 /* Add bootstrap support to the Wordpress theme*/
 
 function theme_add_bootstrap() {
-wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', false, '4.0.0', true);
+wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery'), '4.0.0', true);
+wp_register_script( 'jQuery', 'https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js', null, null, true );
+
 wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css' );
 wp_enqueue_style( 'style-css', get_template_directory_uri() . '/style.css' );
 
@@ -375,15 +377,19 @@ add_action( 'wp_enqueue_scripts', 'theme_add_bootstrap' );
  */
 function jobview_scripts() {
 	wp_enqueue_style( 'jobview-style', get_stylesheet_uri() );
-	wp_enqueue_style('Main css', get_template_directory_uri() . '/css/main.css' );
+	wp_enqueue_style('Main-css', get_template_directory_uri() . '/css/main.css' );
 	wp_enqueue_style('tips-tricks-style' , get_template_directory_uri() . '/css/tips-tricks.css'  );
 	wp_enqueue_style( 'header-css', get_template_directory_uri() . '/css/header.css' );
  	wp_enqueue_style( 'faq-css', get_template_directory_uri() . '/css/faq.css' );
 	wp_enqueue_style( 'job-css', get_template_directory_uri() . '/css/jobs.css' );
-	wp_enqueue_style('Front page css', get_template_directory_uri() . '/css/front-page.css' );
-	wp_enqueue_style('Singel tips css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
+	wp_enqueue_style('Front-page-css', get_template_directory_uri() . '/css/front-page.css' );
+	wp_enqueue_style('Singel-tips-css', get_template_directory_uri() . '/css/single-tips-tricks.css' );
   wp_enqueue_style('Contact-css', get_template_directory_uri() . '/css/contact.css' );
   wp_enqueue_style('About-css', get_template_directory_uri() . '/css/about.css' );
+	wp_enqueue_style('Swiper-css', get_template_directory_uri() . '/css/swiper.min.css' );
+
+	/* Scripts */
+	wp_enqueue_script( 'swiper-js', get_template_directory_uri() . '/js/swiper.js', array('jquery'), true );
 	wp_enqueue_script( 'jobview-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'jobview-post', get_template_directory_uri() . '/js/post.js', array('jquery' ), '1.0.0', true );
 	wp_enqueue_script( 'jobview-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );

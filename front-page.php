@@ -35,7 +35,7 @@ get_header(); ?>
   background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
   -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
   linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
-  url("<?php echo get_template_directory_uri(); ?>/image/categorylist.png");
+  url("<?php echo get_template_directory_uri(); ?>/image/categorylist.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -49,7 +49,7 @@ get_header(); ?>
   background:/*-moz-linear-gradient(-45deg, rgba(30,87,153,0.4) 0%, rgba(40,135,145,0.4) 0%, rgba(135,205,185,0.4) 50%, rgba(252,177,35,0.4) 100%),
   -webkit-linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),*/
   linear-gradient(-45deg, rgba(30,87,153,0.6) 0%, rgba(40,135,145,0.6) 0%, rgba(135,205,185,0.6) 50%, rgba(252,177,35,0.6) 100%),
-  url("<?php echo get_template_directory_uri(); ?>/image/jobagent-bg.png");
+  url("<?php echo get_template_directory_uri(); ?>/image/jobagent-bg.jpg");
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -64,16 +64,13 @@ get_header(); ?>
 async defer></script>
 
 <!--   <script src="https://maps.googleapis.com/maps/api/js"></script> -->
-<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/swiper.min.css">
+
 <script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
 <script src="<?php echo get_template_directory_uri(); ?>/js/joblist.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/swiper.min.js"></script>
 
 
 
-
-</head>
 <!--   MAP SECTION  -->
 <section id="map-section" class="jw-fp-map container-fluid">
 
@@ -89,7 +86,7 @@ async defer></script>
       </div>
       <form>
         <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
-      </form> <span class="jw-search-icon"></span>
+      </form> 
 
     </div>
     <!--  row end -->
@@ -98,7 +95,7 @@ async defer></script>
 
 
 <!--   JOB POST SLIDER SECTION  -->
-<div class="container">
+<div class="container swiper-jobpost">
   <div class="row top-offset-50">
 
     <div class="heading">
@@ -108,7 +105,7 @@ async defer></script>
   </div>
 </div>
 
-<div class="swiper-container top-offset-50">
+<div class="swiper-container top-padding-50 top-offset-50">
   <div class="swiper-wrapper job-post-container">
 
   </div>
@@ -260,6 +257,7 @@ var swiper = new Swiper('.swiper-container', {
 
 
 <div class="full-wrapper d-flex align-items-center top-offset-100 jobagent">
+  <div id="overlay-jobagent" class="d-flex align-items-center">
   <div class="container ">
     <div class="row">
       <div class="col-lg-4">
@@ -274,7 +272,7 @@ var swiper = new Swiper('.swiper-container', {
       </div>
     </div>
   </div> <!-- fullwrapper -->
-
+</div>
 
   <!-- The Modal -->
   <div id="myModal" class="modal ">
@@ -290,7 +288,7 @@ var swiper = new Swiper('.swiper-container', {
 
             <h3>Bruger</h3>
             <input type="email" placeholder="E-mail" required>
-            <h3>Søgeparemetere</h3>
+            <h3>Søgekriterier</h3>
             <input type="text" placeholder="Område">
             <input type="text" placeholder="Jobkategorier">
             <input type="text" placeholder="Søgeord">
@@ -453,14 +451,6 @@ jQuery('#overlay').on('click', function(){
 });
 </script>
 
-<script>
-var swiper = new Swiper('.swiper-container', {
-  navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev',
-  },
-});
 
-</script>
 
 <?php get_footer(); ?>

@@ -91,13 +91,9 @@
 			?>
 		</div><!-- .entry-content -->
 		<div class=" author-footer">
-			<?php
-$user = wp_get_current_user();
 
-if ( $user ) :
-	?>
-	<img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
-<?php endif; ?>
+	    <?php echo get_avatar( get_the_author_meta( 'ID' ), 80 ); ?>
+
 
 	<div class="author-meta-text">
 			<p>

@@ -17,7 +17,7 @@ jQuery(function($) {
     var joburl = props.joblisturl;
 
     return '\
-      <div class="card swiper-slide" style="margin-right:20px;">\
+      <div class="card col-lg-8 swiper-slide" style="margin-right:20px;">\
         <img class="card-img center-image" src="' + image + '" alt="Card image cap" style="padding: 25px; border-radius: 200px; width:300px; height: 300px;">\
         <div class="card-block col-md-6" style="padding: 25px;">\
           <div style="height: 250px; overflow: hidden; margin-bottom:10px;">\

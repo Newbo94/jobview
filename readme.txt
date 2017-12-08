@@ -1,7 +1,7 @@
 === jobview ===
 
-Contributors: automattic
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Contributors: Michelle Thomsen, Jan-Nilas Gerth, Andreas Heise
+Tags: custom-theme
 
 Requires at least: 4.0
 Tested up to: 4.8
@@ -13,7 +13,7 @@ A starter theme called jobview.
 
 == Description ==
 
-Description
+
 
 == Installation ==
 
@@ -21,9 +21,7 @@ Description
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
-== Frequently Asked Questions ==
 
-= Does this theme support any plugins? =
 
 jobview includes support for Infinite Scroll in Jetpack.
 

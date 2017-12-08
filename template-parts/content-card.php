@@ -42,13 +42,9 @@
         <div class="meta-data-text">
           <div class="author-meta">
             <div class="author-meta">
-              <?php
-              $user = wp_get_current_user();
 
-              if ( $user ) :
-                ?>
-                <img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
-              <?php endif; ?>
+                <img src="<?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>" />
+
             </div> <!-- author-meta -->
           </div> <!-- author-meta -->
 

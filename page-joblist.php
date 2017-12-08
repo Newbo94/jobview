@@ -10,7 +10,52 @@
 
 
 
+<style>
 
+#map-container {
+
+  width: 100%;
+}
+#map {
+  width: 100%;
+  height: 50vh;
+  position: absolute;
+  z-index: -1;
+}
+#actions {
+  list-style: none;
+  padding: 0;
+}
+
+
+</style>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
+async defer></script>
+
+
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
+
+
+<!--   MAP SECTION  -->
+<section id="map-section" class="jw-fp-map container-fluid">
+
+  <div class="row" style="margin-left:0; margin-right:0;">
+    <div id="map">
+    </div>
+    <div id="overlay">
+    </div>
+    <div id="jw-fp-mapcontent" class="col-lg-12 text-center">
+      <div id="jw-fp-maptext">
+
+      </div>
+
+
+    </div>
+    <!--  row end -->
+  </div>
+</section>
 
 <div class="container" style="margin-top: 50px;">
 
@@ -239,7 +284,21 @@ jQuery(function() {
 </script>
 
 
+<script>
+var offsetHeight = document.getElementById('map').offsetHeight;
+document.getElementById('overlay').style.height = offsetHeight+'px';
+</script>
 
+<script>
+jQuery('#overlay').on('click', function(){
+  document.getElementById("overlay").style.display = "none",
+  document.getElementById("jw-fp-maptext").style.display = "none";
+  document.getElementById("jw-fp-mapcontent").style.left = "20%";
+  document.getElementById("jw-fp-mapcontent").style.top ="80%";
+  document.getElementById("map").style.position ="relative";
+  document.getElementById("map").style.zIndex ="1";
+});
+</script>
 
 
 

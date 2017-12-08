@@ -1,1 +1,9 @@
-Live demo www.justwebwork.dk/dev/wp/jobview
+Jobview mappe struktur: 
+
+** page-filnavn.php - Indeholder template filer til besteme filer eksempelvis kontakt
+
+
+    ** Mapper **
+*** template-parts ***
+Indeholder content til single post 
+

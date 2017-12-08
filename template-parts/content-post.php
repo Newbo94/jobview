@@ -11,7 +11,7 @@
 
 
 <article  class="col-lg-4 top-offset-30 " id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  <div class="article-card" id="article-card">
+  <div class="article-card">
     <header class="entry-header">
       <div class="header-img-overlay">
 
@@ -33,19 +33,16 @@
         <div class="meta-data-text">
           <div class="author-meta">
             <div class="author-meta">
-              <?php
-              $user = wp_get_current_user();
-
-              if ( $user ) :
-                ?>
-                <img src="<?php echo esc_url( get_avatar_url( $user->ID ) ); ?>" />
-              <?php endif; ?>
+            <?php echo get_avatar( get_the_author_meta( 'ID' ), 32 ); ?>
             </div> <!-- author-meta -->
           </div> <!-- author-meta -->
 
-            <div class="bg-overlay">
-          <p>	<?php the_time('j/m/y') ?></p>
-        </div> <!-- bg-overlay -->
+
+          <div class="bg-overlay">
+            <p>	<?php the_time('j/m/y') ?></p>
+          </div> <!-- bg-overlay -->
+        </div>
+            </div>
         </header><!-- .entry-header -->
 
         <div class="entry-content">
@@ -63,15 +60,11 @@
 
 
 
-        <?php
-      endif; ?>
-      <?php
-      the_excerpt()
-      ?>
-          </div> <!-- entry-content -->
-        </div> <!-- meta-data-text -->
-
-
-
-
-</article><!-- #post-<?php the_ID(); ?> -->
+            <?php
+          endif; ?>
+          <?php
+          the_excerpt()
+          ?>
+        </div> <!-- entry-content -->
+      </div> <!-- meta-data-text -->
+    </article><!-- #post-<?php the_ID(); ?> -->
