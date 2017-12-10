@@ -25,12 +25,12 @@
 
 
 <div class="container top-offset-50">
-<div class="row">
+
   <div class="heading">
   <span class="overline"></span>
   <h1>Tips og tricks til din jobsøgning</h1>
 </div>
-</div>
+
 
   <div class="row">
     <div class="col-lg-3 cat-link-single">

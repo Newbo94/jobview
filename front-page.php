@@ -60,14 +60,9 @@ get_header(); ?>
 }
 </style>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
-async defer></script>
 
-<!--   <script src="https://maps.googleapis.com/maps/api/js"></script> -->
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/joblist.js"></script>
+
 
 
 
@@ -83,10 +78,15 @@ async defer></script>
       <div id="jw-fp-maptext">
         <h1>Tryk på kortet eller brug søgefeltet</h1>
         <h3>Søg mellem mere end <span>12.535</span> jobs i hele Danmark</h3>
+        <form type="text" name="txt" action="<?php echo esc_url( get_page_link( 127 ) ); ?>">
+          <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
+</form>
+
+
+
+
       </div>
-      <form>
-        <input id="jw-map-search" type="search" placeholder="Stillingsbetegnelse, kvalifikation, lokation, postnummer, land eller lign…" name="search">
-      </form> 
+
 
     </div>
     <!--  row end -->
@@ -96,7 +96,7 @@ async defer></script>
 
 <!--   JOB POST SLIDER SECTION  -->
 <div class="container swiper-jobpost">
-  <div class="row top-offset-50">
+  <div class="top-offset-50">
 
     <div class="heading">
       <span class="overline"></span>
@@ -259,7 +259,7 @@ var swiper = new Swiper('.swiper-container', {
 <div class="full-wrapper d-flex align-items-center top-offset-100 jobagent">
   <div id="overlay-jobagent" class="d-flex align-items-center">
   <div class="container ">
-    <div class="row">
+    <div>
       <div class="col-lg-4">
         <div class="heading">
           <span class="overline"></span>
@@ -278,7 +278,7 @@ var swiper = new Swiper('.swiper-container', {
   <div id="myModal" class="modal ">
     <!-- Modal content -->
     <div class="container">
-      <div class="modal-content row">
+      <div class="modal-content">
           <span class="close">&times;</span>
         <div class="col-lg-9">
           <div class="heading">
@@ -304,7 +304,7 @@ var swiper = new Swiper('.swiper-container', {
                 </p>
               </div>
 
-              <button class="jw-btn-primary-cta ">Gem jobagent</button>
+              <button class="jw-btn-primary-cta" id="save-jbag">Gem jobagent</button>
   </div>
 
             </div>
@@ -450,7 +450,9 @@ jQuery('#overlay').on('click', function(){
   document.getElementById("map").style.zIndex ="1";
 });
 </script>
-
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/joblist.js"></script>
 
 
 <?php get_footer(); ?>

@@ -30,12 +30,8 @@
 
 </style>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
-async defer></script>
 
 
-<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
-<script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
 
 
 <!--   MAP SECTION  -->
@@ -53,8 +49,8 @@ async defer></script>
 
 
     </div>
-    <!--  row end -->
-  </div>
+
+  </div>     <!--  row end -->
 </section>
 
 <div class="container" style="margin-top: 50px;">
@@ -70,7 +66,7 @@ async defer></script>
         </div>
         <div class="filter-block">
           <h4 data-toggle="collapse" data-target="#jw-filter-group-1">
-        Job types <span class="toggle-masks"></span></h4>
+        Job typer <span class="toggle-masks"></span></h4>
           <div id="jw-filter-group-1" class="list-group collapse in filter-block">
             <label class="space-btw">Fuldtid<input class="filter-job" value="Fuldtid" type="checkbox">
 
@@ -97,31 +93,31 @@ async defer></script>
           <div id="jw-filter-group-3" class="list-group collapse in filter-block">
             <label class="" data-toggle="collapsed" data-target="#sub-group-3-1" aria-expanded="false">Informationteknologi</label>
             <ul data-toggle="collapse" id="sub-group-3-1" aria-expanded="false">
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Systemudvikling<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Økonomi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">It-ledelse<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Webudvikling<input class="filter-job" value="" type="checkbox"></li>
             </ul>
-            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-2">Informationteknologi</label>
+            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-2">Ledelse organisation HR</label>
             <ul data-toggle="collapse" id="jw-filter-sub-group-3-2">
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Organisation og strategi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Personale og HR<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Topledelse og bestyrelse<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Projektledelse<input class="filter-job" value="" type="checkbox"></li>
             </ul>
-            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-3">Informationteknologi</label>
+            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-3">Social og sundhed</label>
             <ul data-toggle="collapse" id="jw-filter-sub-group-3-3">
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Læge<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Sygeplejerske og jordemoder<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Pleje og omsorg<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Tandlæge og klinikassistent<input class="filter-job" value="" type="checkbox"></li>
             </ul>
-            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-4">Informationteknologi</label>
+            <label class="" data-toggle="collapse" data-target="#jw-filter-sub-group-3-4">Undervisning</label>
             <ul data-toggle="collapse" id="jw-filter-sub-group-3-4">
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
-              <li class="" id="">Informationteknologi<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Pædagog<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Lærer<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Forskning og undervisning<input class="filter-job" value="" type="checkbox"></li>
+              <li class="" id="">Voksenuddannelser<input class="filter-job" value="" type="checkbox"></li>
             </ul>
           </div>
         </div>
@@ -135,13 +131,18 @@ async defer></script>
     <!-- job-list container -->
     <div id="jw-job-post-list" class="col-lg-8">
       <div class="job-list">
-        <div class="job-post-container">
+        <div class="job-post-container1">
         </div>
       </div>
     </div>
     <!-- job-list container END -->
   </div>
 </div>
+
+
+
+
+<!-- KILDE Systemudvikler fra HR-SKYEN MADS                        -->
 
 <script>
 jQuery(function() {
@@ -189,7 +190,7 @@ jQuery(function() {
 
   // Clears container and re-renders jobs
   var renderJobs = function() {
-    jQuery('.job-post-container').html('');
+    jQuery('.job-post-container1').html('');
 
     jobs = jobs.map(function(job) {
       for(var i = 0; i < filters.length; i++) {
@@ -212,11 +213,11 @@ jQuery(function() {
     })
 
     if (!activeJobs.length) {
-      jQuery('.job-post-container').html('Der er ingen aktive job.');
+      jQuery('.job-post-container1').html('Der er ingen aktive job.');
     }
 
     activeJobs.forEach(function(job) {
-      jQuery('.job-post-container').append(createJob(job));
+      jQuery('.job-post-container1').append(createJob(job));
     });
   }
 
@@ -284,6 +285,10 @@ jQuery(function() {
 </script>
 
 
+
+<!-- KILDE Systemudvikler fra HR-SKYEN MADS  -->
+
+
 <script>
 var offsetHeight = document.getElementById('map').offsetHeight;
 document.getElementById('overlay').style.height = offsetHeight+'px';
@@ -299,6 +304,9 @@ jQuery('#overlay').on('click', function(){
   document.getElementById("map").style.zIndex ="1";
 });
 </script>
+<script type="text/javascript" src="<?php echo get_template_directory_uri(); ?>/js/markerclusterer.js"></script>
+<script src="<?php echo get_template_directory_uri(); ?>/js/jobviewmap.js"></script>
+
 
 
 

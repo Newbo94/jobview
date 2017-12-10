@@ -30,8 +30,14 @@ $("#navbar-toggler").click(function(){
     );
 
 
+$('#save-jbag').on('click',function(){ alert("Din Jobagent er nu gemt");});
+
+
 });
 
+
+
+// Kilde https://www.w3schools.com/howto/howto_css_modals.asp 
 
 // Get the modal
 var modal = document.getElementById('myModal');

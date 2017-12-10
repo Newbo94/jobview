@@ -82,5 +82,10 @@ dynamic_sidebar('footer-sidebar-4');
 
 <?php wp_footer(); ?>
 
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD_91mOsG6H_Ec2OwMPfwHF3jFRD1TGasM&callback=initMap"
+async defer></script>
+
+
+
 </body>
 </html>

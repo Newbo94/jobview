@@ -28,6 +28,12 @@
 .caption h4 {
   width: 90%;
     color: #fff;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
 }
 
 
@@ -58,14 +64,7 @@ height: 230px;
           flex-direction: column;
 }
 
-.news-bg span {
-  width: 120px;
-    background: #FCB123;
-    height: 5px;
-    display: block;
-    margin-bottom: 10px;
 
-}
 
 .hovered .thumbnail  {
   -webkit-transform: scale(1.1);
@@ -94,4 +93,14 @@ height: 230px;
 
 #faq-con {
   margin-bottom: 200px;
+}
+
+
+/* Responsiv */
+
+@media screen and (max-width: 780px) {
+  .caption h4 {
+    width: 40%;
+
+}
 }

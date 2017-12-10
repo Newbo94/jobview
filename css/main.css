@@ -100,6 +100,18 @@ color: #3A3A3A;
   border-color: #288791;
   background: #288791;
   width: 150px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+
+.jw-btn-primary:hover {
+  border-color: #288791;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+-webkit-transition: 0.3s ease-in-out;
+transition: 0.3s ease-in-out;
+
 }
 
 .jw-btn-primary-cta {
@@ -110,6 +122,74 @@ color: #3A3A3A;
   background: #FCB123;
   width: 170px;
   color: #ffffff;
+  height: 50px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+}
+
+
+.jw-btn-primary-cta:hover {
+
+  border-color: #FCB123;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+-webkit-transition: 0.3s ease-in-out;
+transition: 0.3s ease-in-out;
+}
+
+
+
+.uopfordret-btn {
+  padding: 1.2em 2em;
+  border-radius: 200px;
+  line-height: 1.5;
+  border-color: #FCB123;
+  background: #FCB123;
+  width: auto;
+  color: #ffffff;
+  height: 50px;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  
+    margin-top: 30px;
+    float: right;
+}
+
+.uopfordret-btn:hover {
+  border-color: #FCB123;
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+-webkit-transition: 0.3s ease-in-out;
+transition: 0.3s ease-in-out;
+
+}
+
+.btn-type1{
+  padding: 1em 1.4em 1em 1.4em;
+  border-radius: 200px;
+  background-color: #0F4155;
+  color: #ffffff;
+  height: 45px;
+  width: 75px;
+  border-style: none;
+}
+
+.btn-type2{
+  padding: 1em 1.4em 1em 1.4em;
+  border-radius: 200px;
+  height: 45px;
+  border: 2px solid #0F4155;
+  background-color: #ffffff;
+}
+
+
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+  border:none;
+}
+
+button:focus {
+  outline: none;
 }
 
 

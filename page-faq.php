@@ -9,13 +9,17 @@
 <?php get_header(); ?>
 
 
-<div class="container news-bg top-offset-50" id="faq-con">
-  <div class="row">
+<div class="container  top-offset-50" >
+
 
     <div class="heading">
-    <span></span>
+    <span class="overline"></span>
       <h1>Her er de mest stillede spørgsmål</h1>
 </div>
+
+
+</div>
+<div class="container" id="faq-con">
 <div class="row">
     <?php
     $args = array( 'post_type' => 'FAQ', 'posts_per_page' => -1 );

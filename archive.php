@@ -30,7 +30,7 @@ get_header(); ?>
 
 
 	<div id="primary" class="content-area container top-offset-50">
-		<main id="main" class="site-main row">
+		<main id="main" class="site-main ">
 
 		<?php
 		if ( have_posts() ) : ?>
@@ -179,5 +179,5 @@ if(is_archive())
 
 
 <?php
-get_sidebar();
+
 get_footer();

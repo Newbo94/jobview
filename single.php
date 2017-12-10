@@ -10,7 +10,7 @@
 get_header(); ?>
 
 	<div id="co" class="content-area container top-offset-50">
-		<main id="main" class="site-main row">
+		<main id="main" class="site-main ">
       <div class="col-lg-8">
         <?php
         if ( function_exists('yoast_breadcrumb') ) {

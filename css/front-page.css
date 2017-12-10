@@ -241,3 +241,19 @@ border: none;
 .swiper-jobpost {
   padding-bottom: 50px;
 }
+
+
+
+/* Responsiv */
+
+
+@media screen and (max-width: 780px) {
+  #jw-fp-maptext h1 {
+    font-size: 40px;
+}
+
+#jw-map-search {
+    width: 100%;
+}
+
+}
